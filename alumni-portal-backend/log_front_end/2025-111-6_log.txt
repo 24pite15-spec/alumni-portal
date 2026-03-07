@@ -1,0 +1,7 @@
+
+11:05:57 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+11:05:57 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+11:06:37 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+11:06:37 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+1:17:29 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+1:17:29 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

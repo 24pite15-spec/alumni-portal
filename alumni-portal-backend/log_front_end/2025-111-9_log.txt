@@ -1,0 +1,4 @@
+
+12:25:59 pm Platform : Portal, Module : Consolidated Stock Report, Info : Request failed with status code 400, Functionality : udfnGetStockReportList
+4:36:02 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+4:36:03 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

@@ -1,0 +1,15 @@
+
+9:47:56 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+9:47:56 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+9:47:56 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+10:38:37 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+10:38:37 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+10:39:02 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+10:39:02 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:12:59 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:12:51 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:12:51 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+3:42:51 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:42:51 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+5:50:14 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+5:50:14 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

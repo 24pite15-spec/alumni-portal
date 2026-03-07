@@ -1,0 +1,165 @@
+
+12:01:02 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:01:02 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:01:02 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:02:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:02:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:02:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:03:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:03:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:03:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:04:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:04:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:04:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:05:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:05:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:05:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:06:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:06:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:06:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:07:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:07:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:07:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:07:35 pm Platform : API, Module : Request, Error : TypeError: Cannot read properties of undefined (reading 'store_email'), Functionality : setRevertRequestStatus
+12:08:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:08:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:08:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:09:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:09:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:09:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:10:01 pm Platform : API, Module : Request, Error : error: duplicate key value violates unique constraint "trn_request_status_logs_pkey", Functionality : requestStatusLog
+12:10:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:10:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:10:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:11:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:11:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:11:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:12:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:12:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:12:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:13:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:13:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:13:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:14:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:14:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:14:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:15:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:15:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:15:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:16:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:16:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:16:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:17:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:17:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:17:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:18:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:18:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:18:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:18:56 pm Platform : API, Module : Request, Error : TypeError: Cannot read properties of undefined (reading 'store_email'), Functionality : setRevertRequestStatus
+12:19:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:19:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:19:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:19:08 pm Platform : API, Module : Request, Error : TypeError: Cannot read properties of undefined (reading 'store_email'), Functionality : setRevertRequestStatus
+12:20:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:20:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:20:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:21:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:21:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:21:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:22:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:22:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:22:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:23:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:23:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:23:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:24:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:24:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:24:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:25:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:25:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:25:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:26:04 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:26:04 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:26:04 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:27:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:27:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:27:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:27:03 pm Platform : API, Module : Supplier, Error : TypeError: Cannot read properties of undefined (reading 'length'), Functionality : syncSupplier
+12:28:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:28:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:28:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:29:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:29:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:29:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:30:04 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:30:04 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:30:04 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:31:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:31:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:31:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:32:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:32:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:32:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:33:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:33:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:33:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:34:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:34:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:34:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:35:05 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:35:05 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:35:05 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:36:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:36:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:36:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:37:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:37:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:37:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:38:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:38:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:38:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:39:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:39:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:39:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:40:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:40:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:40:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:41:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:41:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:41:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:42:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:42:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:42:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:43:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:43:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:43:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:44:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:44:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:44:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:45:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:45:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:45:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:46:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:46:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:46:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:47:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:47:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:47:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:48:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:48:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:48:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:49:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:49:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:49:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:50:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:50:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:50:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:51:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:51:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:51:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:52:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:52:01 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:52:01 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed
+12:53:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : syncReceipt
+12:53:00 pm Platform : API, Module : Receipt, Error : TypeError: Cannot read properties of undefined (reading 'map'), Functionality : syncReceipt
+12:53:00 pm Platform : API, Module : Auto Sync, Error : TypeError: Cannot read properties of undefined (reading 'data'), Functionality : ❌ Sync failed

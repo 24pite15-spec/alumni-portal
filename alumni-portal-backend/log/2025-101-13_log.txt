@@ -1,0 +1,10 @@
+
+6:56:14 pm Platform : API, Module : Purchase Order Master, Error : Error: Error: connect ETIMEDOUT 172.16.1.222:5433, Functionality : getPurchaseOrderList
+6:56:14 pm Platform : API, Module : Partner Master, Error : Error: Error: connect ETIMEDOUT 172.16.1.222:5433, Functionality : getPartnerList
+6:56:14 pm Platform : API, Module : status details, Error : Error: Error: connect ETIMEDOUT 172.16.1.222:5433, Functionality : getTransactionStatusDetails
+6:56:16 pm Platform : API, Module : Purchase Order, Error : Error: Error: connect ETIMEDOUT 172.16.1.222:5433, Functionality : getPartnerList
+6:56:16 pm Platform : API, Module : Purchase Order, Error : Error: Error: connect ETIMEDOUT 172.16.1.222:5433, Functionality : getPOOrderNo
+6:56:34 pm Platform : API, Module : Sync Finalcial Year, Error : Error: read ECONNRESET, Functionality : udfnSyncFinancialYear
+6:56:41 pm Platform : API, Module : Partner Master, Error : Error: Error: connect ETIMEDOUT 172.16.1.222:5433, Functionality : getPartnerList
+6:59:49 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier
+7:00:08 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier

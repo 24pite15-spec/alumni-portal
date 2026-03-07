@@ -1,0 +1,28 @@
+
+10:16:34 am Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier
+10:16:41 am Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier
+10:33:07 am Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier
+10:33:34 am Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier
+10:37:22 am Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier
+12:07:56 pm Platform : API, Module : Purchase , Error : error: column "p_trans_no" does not exist, Functionality : updatePurchaseOrderCancel
+12:14:03 pm Platform : API, Module : Purchase , Error : error: inconsistent types deduced for parameter $2, Functionality : updatePurchaseOrderCancel
+12:15:22 pm Platform : API, Module : Purchase , Error : error: inconsistent types deduced for parameter $2, Functionality : updatePurchaseOrderCancel
+12:16:01 pm Platform : API, Module : Purchase , Error : error: column "po_status" of relation "trn_purchase_order_imei" does not exist, Functionality : updatePurchaseOrderCancel
+12:25:37 pm Platform : API, Module : PurchaseInvoice, Error : AxiosError: Request failed with status code 500, Functionality : syncPurchaseInvoice
+12:25:39 pm Platform : API, Module : PurchaseInvoice, Error : AxiosError: Request failed with status code 500, Functionality : syncPurchaseInvoice
+12:26:26 pm Platform : API, Module : PurchaseInvoice, Error : AxiosError: Request failed with status code 500, Functionality : syncPurchaseInvoice
+1:01:39 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier
+1:12:12 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier
+1:12:37 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier
+1:15:40 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier
+1:24:50 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier
+1:43:09 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+4:20:02 pm Platform : API, Module : DeleteItemGroup, Error : [object Object], Functionality : syncDeleteItemGroup
+4:20:33 pm Platform : API, Module : DeleteItemGroup, Error : [object Object], Functionality : syncDeleteItemGroup
+4:27:09 pm Platform : API, Module : DeleteItemGroup, Error : [object Object], Functionality : syncDeleteItemGroup
+4:28:22 pm Platform : API, Module : DeleteItemGroup, Error : [object Object], Functionality : syncDeleteItemGroup
+4:33:14 pm Platform : API, Module : DeleteItemGroup, Error : [object Object], Functionality : syncDeleteItemGroup
+5:13:33 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+5:14:12 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+5:56:25 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier
+5:56:26 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier

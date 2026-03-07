@@ -1,0 +1,61 @@
+
+12:04:27 pm Platform : API, Module : Model Master, Error : Error: Error: read ECONNRESET, Functionality : getModelList
+12:04:27 pm Platform : API, Module : Brand Master, Error : Error: Error: read ECONNRESET, Functionality : getBrandList
+12:05:57 pm Platform : API, Module : Model Master, Error : Error: Error: connect ETIMEDOUT 172.16.1.222:5433, Functionality : getModelList
+12:05:57 pm Platform : API, Module : Brand Master, Error : Error: Error: connect ETIMEDOUT 172.16.1.222:5433, Functionality : getBrandList
+12:06:25 pm Platform : API, Module : Sync Finalcial Year, Error : Error: connect ETIMEDOUT 172.16.1.222:5433, Functionality : udfnSyncFinancialYear
+12:14:45 pm Platform : API, Module : Model Master, Error : error: syntax error at or near "FROM", Functionality : setModel
+12:17:34 pm Platform : API, Module : Model Master, Error : error: syntax error at or near "FROM", Functionality : setModel
+12:20:30 pm Platform : API, Module : Model Master, Error : error: syntax error at or near "FROM", Functionality : setModel
+1:26:28 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 500, Functionality : syncDeleteAccount
+1:36:55 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:37:40 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:40:29 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:42:32 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:43:08 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:43:25 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:43:50 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:44:48 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:45:29 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:46:53 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:47:21 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:47:38 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:49:24 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:54:39 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+1:54:41 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+1:54:56 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:56:15 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:57:06 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:58:03 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 409, Functionality : syncDebtor
+1:58:40 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+2:05:03 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+2:07:01 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+2:11:23 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+2:11:37 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+4:09:39 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+4:11:23 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+4:13:38 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+4:14:19 pm Platform : API, Module : UpdateCustomer, Error : Error: read ECONNRESET, Functionality : syncUpdateCustomer
+4:15:03 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateCustomer
+4:15:46 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateCustomer
+4:38:07 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+4:40:19 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+4:41:39 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+4:44:05 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+4:46:36 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+4:47:29 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+4:49:05 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+4:55:01 pm Platform : API, Module : Vendor Master, Error : error: column "mr_vendor.ven_bank_name" must appear in the GROUP BY clause or be used in an aggregate function, Functionality : deleteVendor
+4:56:19 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+4:57:17 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+4:58:22 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+5:01:22 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+5:03:50 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+5:11:47 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+5:12:34 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+5:14:52 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+5:24:10 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteCustomer
+5:49:07 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+5:49:33 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+5:50:46 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+6:02:55 pm Platform : API, Module : DeleteItemGroup, Error : ReferenceError: response is not defined, Functionality : syncdeletItemGroup

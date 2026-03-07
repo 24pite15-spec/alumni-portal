@@ -1,0 +1,10 @@
+
+11:09:38 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+11:09:38 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+11:09:38 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+11:25:24 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+12:05:15 pm Platform : Portal, Module : Device Model, Info : Network Error, Functionality : udfnGetDeviceBrandList
+6:17:48 pm Platform : Portal, Module : Partner, Info : Request failed with status code 400, Functionality : udfnGetPartnerList
+6:26:25 pm Platform : Portal, Module : Partner Signup, Info : Request failed with status code 400, Functionality : udfnSavePartner
+6:26:38 pm Platform : Portal, Module : Partner Signup, Info : Request failed with status code 400, Functionality : udfnSavePartner
+6:26:39 pm Platform : Portal, Module : Partner Signup, Info : Request failed with status code 400, Functionality : udfnSavePartner

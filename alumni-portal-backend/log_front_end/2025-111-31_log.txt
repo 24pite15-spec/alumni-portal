@@ -1,0 +1,10 @@
+
+12:04:50 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+12:04:50 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+12:04:53 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+12:04:53 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+12:34:40 pm Platform : Portal, Module : Fee Master, Info : Network Error, Functionality : udfnGetFeeList
+5:03:12 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+5:03:12 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+5:39:52 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+5:39:52 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

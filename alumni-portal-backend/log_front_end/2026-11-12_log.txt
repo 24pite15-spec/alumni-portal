@@ -1,0 +1,29 @@
+
+1:06:40 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+1:06:40 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+1:09:33 pm Platform : Portal, Module : Request-Add, Info : message.toLowerCase is not a function, Functionality : udfnCustomerVerify
+1:09:55 pm Platform : Portal, Module : Request-Add, Info : message.toLowerCase is not a function, Functionality : udfnCustomerVerify
+1:15:57 pm Platform : Portal, Module : Request-Add, Info : message.toLowerCase is not a function, Functionality : udfnCustomerVerify
+1:21:09 pm Platform : Portal, Module : Request-Add, Info : message.toLowerCase is not a function, Functionality : udfnCustomerVerify
+1:21:10 pm Platform : Portal, Module : Request-Add, Info : message.toLowerCase is not a function, Functionality : udfnCustomerVerify
+1:23:49 pm Platform : Portal, Module : Request-Add, Info : message.toLowerCase is not a function, Functionality : udfnCustomerVerify
+1:26:33 pm Platform : Portal, Module : Request-Add, Info : message.toLowerCase is not a function, Functionality : udfnCustomerVerify
+1:29:47 pm Platform : Portal, Module : Request-Add, Info : message.toLowerCase is not a function, Functionality : udfnCustomerVerify
+2:50:26 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+2:50:26 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:54:57 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+2:54:57 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:54:57 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:55:01 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+2:55:01 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+4:10:17 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+4:10:17 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+5:04:17 pm Platform : Portal, Module : Request List, Info : message.toLowerCase is not a function, Functionality : udfnHandleReset
+5:07:24 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+5:07:24 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+5:45:28 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+5:45:29 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:35:35 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+6:35:35 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:35:35 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:43:21 pm Platform : Portal, Module : Partner, Info : Request failed with status code 400, Functionality : udfnGetPartnerList

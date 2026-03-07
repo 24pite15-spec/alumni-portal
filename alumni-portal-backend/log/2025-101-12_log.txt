@@ -1,0 +1,11 @@
+
+10:07:26 am Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 409, Functionality : syncUpdateCustomer
+10:10:15 am Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 409, Functionality : syncUpdateCustomer
+10:24:52 am Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 409, Functionality : syncUpdateCustomer
+11:21:19 am Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 500, Functionality : syncUpdateCustomer
+11:21:56 am Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+11:22:50 am Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+11:31:07 am Platform : API, Module : Customer, Error : Error: socket hang up, Functionality : syncDebtor
+11:31:52 am Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+11:35:42 am Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+11:39:32 am Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor

@@ -1,0 +1,28 @@
+
+10:11:08 am Platform : Portal, Module : Device Brand, Info : Request failed with status code 400, Functionality : udfnSavePO
+11:14:20 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnGetPurchaseOrderList
+12:29:48 pm Platform : Portal, Module : Purchase, Info : axios is not defined, Functionality : udfnPurchaseView
+12:30:09 pm Platform : Portal, Module : Purchase, Info : COMMON_API is not defined, Functionality : udfnPurchaseView
+12:30:30 pm Platform : Portal, Module : Purchase, Info : Cannot read properties of undefined (reading '0'), Functionality : udfnPurchaseView
+1:13:26 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+1:13:26 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+1:21:35 pm Platform : Portal, Module : Purchase Order, Info : Request failed with status code 500, Functionality : udfnPurchaseOrderView
+5:08:49 pm Platform : Portal, Module : Sales, Info : Request failed with status code 400, Functionality : udfnGetSalesList
+5:09:28 pm Platform : Portal, Module : Sales, Info : Request failed with status code 400, Functionality : udfnGetSalesList
+5:33:14 pm Platform : Portal, Module : Request List, Info : setSelectedPartner is not defined, Functionality : udfnGetDDList
+5:52:07 pm Platform : Portal, Module : Request List, Info : setSelectedPartner is not defined, Functionality : udfnGetDDList
+5:52:58 pm Platform : Portal, Module : Request List, Info : setSelectedPartner is not defined, Functionality : udfnGetDDList
+5:53:28 pm Platform : Portal, Module : Request List, Info : setSelectedPartner is not defined, Functionality : udfnGetDDList
+5:53:41 pm Platform : Portal, Module : Request List, Info : setSelectedPartner is not defined, Functionality : udfnGetDDList
+5:56:15 pm Platform : Portal, Module : Sales, Info : poId is not defined, Functionality : udfnSalesView
+5:57:48 pm Platform : Portal, Module : Sales, Info : COMMON_API is not defined, Functionality : udfnSalesView
+5:58:03 pm Platform : Portal, Module : Sales, Info : Cannot read properties of undefined (reading '0'), Functionality : udfnSalesView
+5:59:17 pm Platform : Portal, Module : Sales, Info : Cannot read properties of undefined (reading '0'), Functionality : udfnSalesView
+5:59:18 pm Platform : Portal, Module : Sales, Info : Cannot read properties of undefined (reading '0'), Functionality : udfnSalesView
+5:59:30 pm Platform : Portal, Module : Sales, Info : Cannot read properties of undefined (reading '0'), Functionality : udfnSalesView
+6:00:01 pm Platform : Portal, Module : Sales, Info : Cannot read properties of undefined (reading '0'), Functionality : udfnSalesView
+6:00:26 pm Platform : Portal, Module : Sales, Info : Cannot read properties of undefined (reading '0'), Functionality : udfnSalesView
+6:18:05 pm Platform : Portal, Module : Sales, Info : Request failed with status code 400, Functionality : udfnGetSalesList
+6:18:29 pm Platform : Portal, Module : Sales, Info : Request failed with status code 400, Functionality : udfnGetSalesList
+7:18:05 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+7:18:06 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

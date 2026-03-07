@@ -1,0 +1,82 @@
+
+9:52:09 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+9:52:09 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+10:27:59 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+10:27:59 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+10:57:02 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+10:57:35 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+10:57:47 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+10:58:36 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+10:58:53 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:00:06 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:01:03 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:01:35 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:03:10 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:05:38 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:05:38 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:06:07 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:07:33 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:07:44 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:09:18 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:10:22 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:14:24 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:14:38 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:14:58 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:15:17 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:15:28 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:15:48 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:16:11 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:17:12 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:17:39 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:18:00 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:18:01 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:18:12 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:18:41 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:18:45 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:18:58 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:21:12 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:21:36 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:21:36 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:21:45 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:21:45 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:22:05 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:22:06 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:23:11 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:23:11 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:23:14 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:23:15 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:23:30 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:23:58 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:24:19 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:26:17 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:26:17 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:26:18 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:26:19 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:26:36 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:26:46 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:27:51 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:27:51 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:27:51 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:28:13 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:28:32 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:30:10 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:30:16 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:30:47 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:31:25 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:31:25 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:32:10 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:32:10 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:32:15 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:32:23 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:32:24 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:32:28 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:32:29 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:38:50 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 400, Functionality : udfnPurchaseOrderView
+11:59:22 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 404, Functionality : udfnPurchaseOrderView
+11:59:53 am Platform : Portal, Module : Purchase Order, Info : Request failed with status code 500, Functionality : udfnPurchaseOrderView
+12:02:42 pm Platform : Portal, Module : Purchase Order, Info : Request failed with status code 500, Functionality : udfnPurchaseOrderView
+12:51:41 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+12:51:41 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+3:05:27 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:55:27 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:55:27 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

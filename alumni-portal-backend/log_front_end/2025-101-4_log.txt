@@ -1,0 +1,8 @@
+
+9:19:39 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+9:19:39 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+9:19:39 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+10:02:37 am Platform : Portal, Module : Device Model, Info : Network Error, Functionality : udfnUpdateDeviceModel
+12:32:45 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+12:32:45 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:58:28 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout

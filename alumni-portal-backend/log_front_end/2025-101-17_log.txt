@@ -1,0 +1,10 @@
+
+10:54:40 am Platform : Portal, Module : Device Model, Info : Request failed with status code 400, Functionality : udfnGetDeviceModelList
+10:54:41 am Platform : Portal, Module : Device Model, Info : Request failed with status code 400, Functionality : udfnGetDeviceBrandList
+10:55:04 am Platform : Portal, Module : Device Model, Info : Request failed with status code 400, Functionality : udfnGetDeviceModelList
+10:55:04 am Platform : Portal, Module : Device Model, Info : Request failed with status code 400, Functionality : udfnGetDeviceBrandList
+11:36:09 am Platform : Portal, Module : Layout1Topbar, Info : Request failed with status code 404, Functionality : udfnManualSync
+1:24:01 pm Platform : Portal, Module : Layout1Topbar, Info : Network Error, Functionality : udfnManualSync
+3:02:23 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:02:23 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+5:16:03 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout

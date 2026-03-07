@@ -1,0 +1,584 @@
+@import url("reset.css");
+
+@font-face {
+    font-family: Roboto;
+    src: url(font/Roboto-Regular.ttf);
+    src: url(Roboto-Medium.ttf);
+}
+
+*{
+    font-family: Roboto !important;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.3;
+}
+
+.wrapper {
+    margin: 0 auto;
+    min-width: 980px;
+    max-width: 1366px;
+    height: 100%;
+    padding: 0px 20px;
+    position: relative;
+}
+.container {
+    padding: 0 20px;
+}
+.topStrip {
+    height: 24px;
+    background: #2E4167;
+    margin-bottom: 24px;
+    text-align: right;
+    position: relative;
+}
+.topStrip .depIconCont {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 6px 20px 6px 5px;
+    background: #2E4167;
+}
+.topStrip .depIconCont:before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    left: -15px;
+    top: 0;
+    height: 100%;
+    width: 20px;
+    background-color: inherit;
+    -webkit-transform: skewX(30deg);
+    -moz-transform: skewX(30deg);
+    -ms-transform: skewX(30deg);
+    transform: skewX(30deg);
+}
+.topStrip .depIconCont span{
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+}
+.doc_container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.doc_container ul li {
+    list-style: none;
+    display: block;
+    padding: 0 0 4px 0;
+    font-size: 14px;
+    color: #555;    
+}
+.doc_container ul li.title {
+    font-size: 16px;
+    color: #555; 
+    font-weight: 500;   
+}
+.doc_container ul li.title .link {
+    color: #00a0e3;  
+}
+.doc_right{
+    display: flex;
+    align-items: center;
+}
+.patInfo {
+    display: flex;
+}
+.patName {
+    margin-right: 24px;
+    width: 300px;
+    background: #ebebeb;
+    border-radius: 4px;
+    padding: 20px;
+}
+.patName .title {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    padding: 8px 10px;
+    margin: -20px -20px 0px -20px;
+    background: #2E4167;
+}
+.patName .name {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #2E4167;
+    text-align: center;
+    margin: 20px 0;
+}
+.patName .email {
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+    margin: 20px 0;
+}
+.patDetails {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    padding: 15px;
+}
+.patDetails ul{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.patDetails ul li{
+    width: 20%;
+    font-size: 22px;
+    color: #000;
+}
+.patDetails ul li span{
+    display: block;
+    font-size: 20px;
+    color: #555;
+    margin-top: 5px;
+}
+.patVh {
+    display: flex;
+    margin-top: 24px;
+}
+.patVhInfo {
+    display: flex;
+    margin-top: 10px;
+}
+.patVh ul{
+    width: 50%;
+    padding-right: 20px;
+}
+.patVh ul + ul{
+    padding-left: 20px;
+    padding-right: 0;
+    position: relative;
+}
+.patVh ul + ul:before{
+    content: "";
+    width: 1px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 90%;
+    margin: auto;
+    position: absolute;
+    border-left: 1px solid #ddd;
+}
+.patVh ul li{
+    display: flex;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 5px;
+}
+.patVh ul li span{
+    width: 50%;
+    font-size: 16px;
+    color: #555;
+}
+.patVh ul li span + span{
+    text-align: right;
+}
+
+.patVital {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 70%;
+    padding: 15px;
+    margin-right: 24px;
+}
+.patHistory {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 30%;
+    padding: 15px;
+}
+.patHistory .patVhInfo{
+    display: block;
+}
+.patHistory .patVhInfo ul{
+    width: 100%;
+}
+
+.patPd {
+    display: flex;
+    margin-top: 24px;
+}
+.patPd .patVital {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 50%;
+    padding: 15px;
+    margin-right: 24px;
+}
+.patPd .patHistory {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 50%;
+    padding: 15px;
+}
+.patPd ul{
+    width: 50%;
+    padding-right: 20px;
+}
+.patPd ul + ul{
+    padding-left: 20px;
+    padding-right: 0;
+    position: relative;
+}
+.patPd ul + ul:before{
+    content: "";
+    width: 1px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 90%;
+    margin: auto;
+    position: absolute;
+    border-left: 1px solid #ddd;
+}
+.patPd ul li{
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 5px;
+}
+.patPd ul li span{
+    display: block;
+    font-size: 16px;
+    color: #555;
+}
+.patPd ul li span + span{
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 5px;
+}
+
+.patInvest {
+    display: flex;
+    margin-top: 24px;
+}
+.patInvest .patVital {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+}
+.patInvest ul{
+    min-width: 16%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.patInvest ul + ul{
+    padding-left: 40px;
+    padding-right: 0;
+    position: relative;
+}
+.patInvest ul + ul:before{
+    content: "";
+    width: 1px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 90%;
+    margin: auto;
+    position: absolute;
+    border-left: 1px solid #ddd;
+}
+.patInvest ul li{
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 5px;
+    list-style-type: disc;
+}
+.patInvest ul li span{
+    display: block;
+    font-size: 16px;
+    color: #555;
+}
+.patInvest ul li span + span{
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 5px;
+}
+.patInvest .iconInvest {
+    display: inline-block;
+    min-width: 100px;
+    border-radius: 50px;
+    background: #2E4167;
+    color: #fff;
+    font-size: 14px;
+    padding: 6px 2px 6px 20px;
+    text-align: center;
+    margin: 0 0 10px -20px;
+    position: relative;
+}
+.patInvest .iconInvest .Icon {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    border-radius: 50px;
+    background: #fff;
+    text-align: center;
+    margin: 0;
+    vertical-align: middle;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+}
+
+.patProcedure {
+    display: flex;
+    margin-top: 24px;
+}
+.patProcedure .patHistory {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    padding: 15px;
+}
+.patProcedure ul{
+    width: 100%;
+}
+.patProcedure ul li{
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+.gTitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: #2E4167;
+    padding: 8px 15px;
+    border-bottom: 1px solid #ddd;
+    margin: -15px -15px 0 -15px ;
+}
+.u-textRight {
+    text-align: right;
+}
+.u-textCenter {
+    display: block;
+    text-align: center;
+}
+.u-displayBlock {
+    display: block;
+}
+.success {
+    font-style: normal;
+    font-weight: bold;
+    color: #009846;
+}
+.error {
+    font-style: normal;
+    font-weight: bold;
+    color: #e31e24;
+}
+
+/* Table */
+.medicine {
+    margin-top: 24px;
+    border-collapse: collapse;
+    width: 100%;
+}
+.medicine th:nth-child(1) {
+    width: 50px;
+}
+.medicine th:nth-child(3),
+.medicine td:nth-child(3) {
+    text-align: right;
+    width: 120px !important;
+}
+.medicine th:nth-child(4),
+.medicine th:nth-child(5),
+.medicine th:nth-child(6),
+.medicine th:nth-child(7) {
+    font-size: 12px;
+    text-align: center;
+}
+.medicine td:nth-child(3),
+.medicine th:nth-child(3), 
+.medicine td:nth-child(4), 
+.medicine th:nth-child(4),
+.medicine td:nth-child(5), 
+.medicine th:nth-child(5),
+.medicine td:nth-child(6), 
+.medicine th:nth-child(6),
+.medicine td:nth-child(7), 
+.medicine th:nth-child(7) {
+    border-right: 1px solid #ddd;
+    padding: 8px;
+    width: 50px;
+}
+.medicine {
+    border: 1px solid #ddd;
+}
+
+.medicine tr th:last-child,
+.medicine tr td:last-child {
+    text-align: right;
+}
+
+.medicine tr:nth-child(odd){
+    background-color: #ebebec;
+}
+
+.medicine th {
+    text-align: left;
+    background-color: #6f7075;
+    color: white;
+}
+.medicine th, .medicine td {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+/*Footer*/
+.footer{
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+}
+.footer-logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 85px;
+    height: 75px;
+}
+.footer-logo img{
+    display: block;
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.footer-content {
+    background-color: #143861;
+    margin-left: 100px;
+}
+.footer-content p{
+    color: #ebecec;
+    padding: 15px;
+    margin: 0;
+    line-height: 24px;
+}
+
+/* Icon */
+.Icon {
+    display: inline-block;
+    position: relative;
+    margin: -5px 5px 0 0;
+}
+.Icon img, .Icon svg{
+    position: absolute;
+    height: 70%;
+    left: 0px;
+    top: 4px;
+    right: 0;
+    margin: auto;
+}
+.Icon-depType {
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.Icon-user{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: #fff;
+}
+.Icon-envelope {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: #2E4167;
+}
+.Icon-information {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: #2E4167;
+}
+.Icon-investigation {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: #2E4167;
+}
+.Icon-procedure {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: #2E4167;
+}
+.Icon-ecg svg{
+    margin: 1px 70px 0px 3px;
+    height: 45%;
+}
+.Icon-day {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: #fff;
+    margin: -15px 0 0 0;
+}
+.Icon-day svg {
+    position: absolute;
+    height: 90%;
+    left: 0px;
+    top: 3px;
+    right: 0;
+    margin: auto;
+}
+.Icon-mtype {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: #2E4167;
+    margin: -10px 0 0 0;
+    font-size: 20px;
+}
+.Icon-mtype svg {
+    position: absolute;
+    height: 90%;
+    left: 0px;
+    top: 3px;
+    right: 0;
+    margin: auto;
+}
+.times {
+    font-size: 20px;
+    color: #2E4167;
+}
+.tea {
+    height: 32px;
+}
+.tea svg{
+    top: 6px;
+}

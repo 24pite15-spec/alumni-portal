@@ -1,0 +1,26 @@
+
+9:52:04 am Platform : Portal, Module : Request List, Info : Request failed with status code 400, Functionality : udfnGetDDList
+9:52:04 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+9:52:05 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+9:52:26 am Platform : Portal, Module : Request List, Info : Request failed with status code 400, Functionality : udfnGetDDList
+9:58:21 am Platform : Portal, Module : salesReturnList, Info : user is not defined, Functionality : udfnGetSalesReturnList
+9:58:56 am Platform : Portal, Module : salesReturnList, Info : user is not defined, Functionality : udfnGetSalesReturnList
+9:59:10 am Platform : Portal, Module : salesReturnList, Info : user is not defined, Functionality : udfnGetSalesReturnList
+10:00:28 am Platform : Portal, Module : salesReturnList, Info : user is not defined, Functionality : udfnGetSalesReturnList
+10:01:41 am Platform : Portal, Module : salesReturnList, Info : user is not defined, Functionality : udfnGetSalesReturnList
+10:02:28 am Platform : Portal, Module : salesReturnList, Info : user is not defined, Functionality : udfnGetSalesReturnList
+10:02:34 am Platform : Portal, Module : salesReturnList, Info : user is not defined, Functionality : udfnGetSalesReturnDD
+10:03:16 am Platform : Portal, Module : salesReturnList, Info : user is not defined, Functionality : udfnGetSalesReturnDD
+10:03:49 am Platform : Portal, Module : salesReturnList, Info : Request failed with status code 400, Functionality : udfnGetSalesReturnDD
+10:03:58 am Platform : Portal, Module : salesReturnList, Info : Request failed with status code 400, Functionality : udfnGetSalesReturnDD
+10:04:38 am Platform : Portal, Module : salesReturnList, Info : statusData is not defined, Functionality : udfnGetSalesReturnDD
+11:14:41 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+11:14:41 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+11:15:06 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+11:15:06 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+12:00:25 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+12:00:25 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+12:56:25 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+12:56:25 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+12:56:45 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+12:56:45 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

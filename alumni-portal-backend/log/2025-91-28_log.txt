@@ -1,0 +1,17 @@
+
+3:34:09 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 402, Functionality : syncItemGroup
+3:38:18 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 402, Functionality : syncCreateAccount
+4:01:06 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 402, Functionality : syncCreateAccount
+4:14:11 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 402, Functionality : syncCreateAccount
+4:18:01 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 402, Functionality : syncCreateAccount
+4:56:11 pm Platform : API, Module : Fee Master, Error : error: column "ft_gst_per" does not exist, Functionality : getfeeList
+4:56:45 pm Platform : API, Module : Fee Master, Error : error: column "ft_gst_per" does not exist, Functionality : getfeeList
+4:57:30 pm Platform : API, Module : Fee Master, Error : error: column "ft_gst_per" does not exist, Functionality : getfeeList
+4:59:14 pm Platform : API, Module : Fee Master, Error : error: column "ft_gst_per" does not exist, Functionality : getfeeList
+7:10:07 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 402, Functionality : syncCustomer
+7:12:23 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 402, Functionality : syncCustomer
+7:14:34 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 402, Functionality : syncCustomer
+7:15:04 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 402, Functionality : syncCustomer
+7:15:36 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 402, Functionality : syncCustomer
+7:17:39 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 402, Functionality : syncCustomer
+7:18:34 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 402, Functionality : syncCustomer

@@ -1,0 +1,5 @@
+
+1:10:09 pm Platform : API, Module : Purchase, Error : error: null value in column "pi_po_no" violates not-null constraint, Functionality : updatePurchase
+1:22:27 pm Platform : API, Module : Purchase , Error : error: column "poi_status" of relation "trn_purchase_order_imei" does not exist, Functionality : updatePurchaseStatus
+1:23:47 pm Platform : API, Module : Purchase , Error : error: column "poi_status" of relation "trn_purchase_order_imei" does not exist, Functionality : updatePurchaseStatus
+3:58:21 pm Platform : API, Module : Purchase , Error : error: column "poi_status" of relation "trn_purchase_order_imei" does not exist, Functionality : updatePurchaseStatus

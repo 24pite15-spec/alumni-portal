@@ -1,0 +1,5 @@
+
+11:33:00 am Platform : API, Module : updateAccount, Error : {"exc_type":"DoesNotExistError","_server_messages":"[\"{\\\"message\\\": \\\"Account TEST PRODUCT FEE NEW - T not found\\\", \\\"title\\\": \\\"Message\\\", \\\"indicator\\\": \\\"red\\\", \\\"raise_exception\\\": 1, \\\"__frappe_exc_id\\\": \\\"05c36cf9bdb3ec09b3e93e927b1767a05ef63b88d399416fc03253ed\\\"}\"]"}, Functionality : updateAccount-ERPNext API error
+11:33:08 am Platform : API, Module : updateAccount, Error : {"exc_type":"DoesNotExistError","_server_messages":"[\"{\\\"message\\\": \\\"Account TEST PRODUCT FEE NEW - T not found\\\", \\\"title\\\": \\\"Message\\\", \\\"indicator\\\": \\\"red\\\", \\\"raise_exception\\\": 1, \\\"__frappe_exc_id\\\": \\\"199ea8646cc7929382f6049860b00b630baaf916cf1b6f0705ea2389\\\"}\"]"}, Functionality : updateAccount-ERPNext API error
+11:34:24 am Platform : API, Module : DeleteItem, Error : {"exc_type":"DoesNotExistError"}, Functionality : syncDeleteItem-ERPNext API error
+11:34:24 am Platform : API, Module : deleteAccount, Error : {"exc_type":"DoesNotExistError"}, Functionality : deleteAccount-ERPNext API error

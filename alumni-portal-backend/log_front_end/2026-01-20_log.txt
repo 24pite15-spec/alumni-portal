@@ -1,0 +1,22 @@
+
+1:45:37 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+1:45:37 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:15:49 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+2:15:49 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+3:05:32 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:05:38 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+3:05:38 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+3:05:38 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+3:36:50 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:36:50 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+4:54:24 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+4:54:24 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+4:56:46 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+4:56:46 pm Platform : Portal, Module : Question Category, Info : userLogout is not defined, Functionality : udfnGetQuestionCategoryList
+5:26:50 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+5:26:50 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+5:41:26 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+5:41:26 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+5:41:29 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+5:41:29 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+5:41:29 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

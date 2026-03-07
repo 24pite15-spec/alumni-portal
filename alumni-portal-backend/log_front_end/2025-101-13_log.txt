@@ -1,0 +1,4 @@
+
+9:55:26 am Platform : Portal, Module : Store, Info : setActivePartnerOptions is not defined, Functionality : udfnGetPartnerList
+1:53:21 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+1:53:21 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

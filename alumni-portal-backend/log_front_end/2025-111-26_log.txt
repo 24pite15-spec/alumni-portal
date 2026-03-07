@@ -1,0 +1,48 @@
+
+9:53:18 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+9:53:18 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+9:53:18 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+10:13:20 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+10:13:20 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+11:56:26 am Platform : Portal, Module : Purchase, Info : Request failed with status code 400, Functionality : udfnPurchaseView
+11:57:03 am Platform : Portal, Module : Purchase, Info : Request failed with status code 400, Functionality : udfnPurchaseView
+12:11:04 pm Platform : Portal, Module : Partner Signup, Info : consile is not defined, Functionality : udfnSavePartner
+12:12:10 pm Platform : Portal, Module : Partner, Info : Request failed with status code 400, Functionality : udfnGetPartnerList
+12:16:00 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+12:16:00 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+12:21:18 pm Platform : Portal, Module : Partner, Info : Request failed with status code 400, Functionality : udfnGetPartnerList
+12:25:14 pm Platform : Portal, Module : Partner Signup, Info : urlParts is not defined, Functionality : udfnSavePartner
+12:26:38 pm Platform : Portal, Module : Partner Signup, Info : urlParts is not defined, Functionality : udfnSavePartner
+1:04:34 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+1:04:34 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+1:21:49 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+1:21:50 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:11:56 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+2:11:56 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:41:46 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+2:41:46 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:41:50 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+2:41:51 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:43:41 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+2:43:41 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+3:52:22 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:52:23 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+4:22:59 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+4:22:59 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+5:29:21 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+5:29:21 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+5:29:56 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+5:29:56 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:09:28 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+6:09:28 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:09:33 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+6:09:33 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:21:18 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+6:21:18 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:24:54 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+6:24:54 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:40:42 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+6:40:42 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:55:46 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+6:55:46 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+8:28:20 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout

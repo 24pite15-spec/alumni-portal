@@ -1,0 +1,34 @@
+
+12:15:37 pm Platform : Portal, Module : Store, Info : setEditPopup is not defined, Functionality : udfnGetStoreDetails
+12:17:54 pm Platform : Portal, Module : Store, Info : setEditPopup is not defined, Functionality : udfnGetStoreDetails
+12:18:34 pm Platform : Portal, Module : Store, Info : Cannot read properties of undefined (reading '0'), Functionality : udfnGetStoreDetails
+12:20:11 pm Platform : Portal, Module : Store, Info : Cannot read properties of undefined (reading '0'), Functionality : udfnGetStoreDetails
+12:20:34 pm Platform : Portal, Module : Partner, Info : Cannot read properties of undefined (reading '0'), Functionality : udfnGetPartnerDetails
+12:41:31 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+12:41:31 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+12:42:03 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+12:42:03 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+1:23:46 pm Platform : Portal, Module : partner, Info : Network Error, Functionality : udfnDropDownData
+1:25:46 pm Platform : Portal, Module : Partner, Info : Request failed with status code 400, Functionality : udfnGetPartnerList
+2:59:13 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:29:10 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 500, Functionality : udfnUpdatePartnerDetails
+3:30:37 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 500, Functionality : udfnUpdatePartnerDetails
+3:33:51 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 500, Functionality : udfnUpdatePartnerDetails
+3:36:06 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 500, Functionality : udfnUpdatePartnerDetails
+3:36:47 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 500, Functionality : udfnUpdatePartnerDetails
+3:38:45 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 400, Functionality : udfnUpdatePartnerDetails
+3:39:20 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 400, Functionality : udfnUpdatePartnerDetails
+3:40:31 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 400, Functionality : udfnUpdatePartnerDetails
+3:40:52 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 400, Functionality : udfnUpdatePartnerDetails
+3:42:18 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 400, Functionality : udfnUpdatePartnerDetails
+3:43:06 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 400, Functionality : udfnUpdatePartnerDetails
+3:44:02 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 400, Functionality : udfnUpdatePartnerDetails
+3:45:44 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 400, Functionality : udfnUpdatePartnerDetails
+4:23:48 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 400, Functionality : udfnUpdatePartnerDetails
+4:24:26 pm Platform : Portal, Module : Partner Master, Info : Request failed with status code 400, Functionality : udfnUpdatePartnerDetails
+5:25:03 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+5:25:03 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:48:50 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+6:48:50 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:49:00 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+6:49:00 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

@@ -1,0 +1,16 @@
+
+10:54:20 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+10:54:21 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+11:15:52 am Platform : Portal, Module : Partner Master, Info : Request failed with status code 400, Functionality : udfnUpdatePartnerDetails
+11:21:29 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+11:21:29 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+11:23:14 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+11:23:14 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+11:26:45 am Platform : Portal, Module : Partner Master, Info : Request failed with status code 400, Functionality : udfnUpdatePartnerDetails
+2:59:06 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+2:59:06 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:15:50 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+6:15:50 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:45:34 pm Platform : Portal, Module : Device Model, Info : Request failed with status code 400, Functionality : udfnSaveDeviceModel
+6:46:45 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+6:46:45 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

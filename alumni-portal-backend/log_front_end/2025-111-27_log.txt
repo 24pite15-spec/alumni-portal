@@ -1,0 +1,19 @@
+
+10:01:20 am Platform : Portal, Module : Request-Add, Info : Network Error, Functionality : udfnGetDDList
+10:01:20 am Platform : Portal, Module : company, Info : Network Error, Functionality : udfnEditLoadApi
+10:01:20 am Platform : Portal, Module : company, Info : Network Error, Functionality : udfnDropDownData
+10:01:20 am Platform : Portal, Module : Request List, Info : Network Error, Functionality : udfnGetDDList
+10:01:20 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+10:01:20 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+10:31:12 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+10:31:12 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+10:31:12 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+10:31:12 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+10:36:18 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+10:36:18 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:16:51 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+2:16:51 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:46:54 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+2:46:54 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:47:25 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+2:47:25 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

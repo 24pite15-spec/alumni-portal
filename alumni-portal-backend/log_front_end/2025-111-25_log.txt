@@ -1,0 +1,33 @@
+
+9:58:18 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+9:58:18 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+9:58:18 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:38:04 pm Platform : Portal, Module : Partner, Info : isPdf is not defined, Functionality : udfnGetPartnerDetails
+3:44:53 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:44:53 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+3:50:45 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+3:56:31 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+3:56:38 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+3:56:49 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+3:56:53 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+3:56:55 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+3:57:01 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+3:57:50 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+3:58:07 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+3:58:17 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+3:58:26 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+4:05:14 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+4:05:37 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+4:07:15 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+4:07:17 pm Platform : Portal, Module : Variant, Info : Request failed with status code 400, Functionality : udfnDeviceModelList
+4:07:19 pm Platform : Portal, Module : Variant, Info : Request failed with status code 400, Functionality : udfnDeviceModelList
+4:07:37 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+4:07:43 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+4:08:04 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+4:08:05 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+5:05:36 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+5:05:36 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+5:05:55 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+5:05:55 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:33:07 pm Platform : Portal, Module : Question, Info : Network Error, Functionality : udfnGetRequestList
+6:33:07 pm Platform : Portal, Module : Question, Info : Network Error, Functionality : udfnGetRequestList

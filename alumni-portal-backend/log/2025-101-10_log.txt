@@ -1,0 +1,50 @@
+
+9:12:11 am Platform : API, Module : refersh token, Error : TokenExpiredError: jwt expired, Functionality : refreshtoken
+10:07:15 am Platform : API, Module : Purchase Order, Error : TypeError: requestIds.map is not a function, Functionality : setPurchaseOrder
+10:12:05 am Platform : API, Module : Request, Error : error: column "reqid" does not exist, Functionality : purchaseOrderStatusLog
+10:21:51 am Platform : API, Module : Request, Error : error: invalid input syntax for type json, Functionality : purchaseOrderStatusLog
+10:22:43 am Platform : API, Module : Request, Error : error: invalid input syntax for type json, Functionality : purchaseOrderStatusLog
+11:31:34 am Platform : API, Module : SalesInvoice, Error : AxiosError: Request failed with status code 404, Functionality : syncSalesInvoice
+11:34:06 am Platform : API, Module : SalesInvoice, Error : AxiosError: Request failed with status code 404, Functionality : syncSalesInvoice
+1:15:49 pm Platform : API, Module : Request, Error : error: inconsistent types deduced for parameter $3, Functionality : purchaseOrderStatusLog
+1:16:50 pm Platform : API, Module : Request, Error : error: inconsistent types deduced for parameter $3, Functionality : purchaseOrderStatusLog
+1:17:24 pm Platform : API, Module : Request, Error : error: inconsistent types deduced for parameter $3, Functionality : purchaseOrderStatusLog
+1:18:28 pm Platform : API, Module : Request, Error : error: inconsistent types deduced for parameter $3, Functionality : purchaseOrderStatusLog
+1:19:41 pm Platform : API, Module : Request, Error : error: column "reqslid" does not exist, Functionality : purchaseOrderStatusLog
+1:20:24 pm Platform : API, Module : Request, Error : error: inconsistent types deduced for parameter $3, Functionality : purchaseOrderStatusLog
+1:58:37 pm Platform : API, Module : Request, Error : error: invalid input syntax for type bigint: "{"53"}", Functionality : purchaseStatusLog
+2:01:37 pm Platform : API, Module : Request, Error : error: invalid input syntax for type bigint: "{"54"}", Functionality : purchaseStatusLog
+2:45:37 pm Platform : API, Module : PurchaseInvoice, Error : AxiosError: Request failed with status code 417, Functionality : syncPurchaseInvoice
+4:32:37 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+4:33:16 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+4:41:49 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+4:42:39 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+4:44:53 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+4:45:18 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+4:47:29 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+4:50:15 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+4:52:07 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+4:54:42 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+4:54:54 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+4:59:04 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+5:07:16 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+5:08:12 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+5:09:05 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+5:13:40 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+5:17:43 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+5:25:13 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+5:28:13 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+5:28:36 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+5:32:32 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+5:35:12 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+5:37:48 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+5:49:32 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+5:50:01 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateCustomer
+5:50:57 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+5:51:27 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+5:53:48 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+5:54:11 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+5:55:25 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+5:55:31 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+6:00:47 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+6:09:38 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncSupplier

@@ -1,0 +1,59 @@
+
+12:54:03 pm Platform : API, Module : refersh token, Error : JsonWebTokenError: invalid signature, Functionality : refreshtoken
+12:59:55 pm Platform : API, Module : refersh token, Error : JsonWebTokenError: invalid signature, Functionality : refreshtoken
+1:05:42 pm Platform : API, Module : Pdf Generation, Error : Error: Could not find Chrome (ver. 132.0.6834.83). This can occur if either
+ 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or
+ 2. your cache path is incorrectly configured (which is: C:\Users\Padmalakshmi\.cache\puppeteer).
+For (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration., Functionality : getPurchaseReceiptPdf
+1:05:42 pm Platform : API, Module : Request Service, Error : TypeError: Invalid URL, Functionality : udfnSendMail_request
+1:07:55 pm Platform : API, Module : Pdf Generation, Error : Error: Could not find Chrome (ver. 132.0.6834.83). This can occur if either
+ 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or
+ 2. your cache path is incorrectly configured (which is: C:\Users\Padmalakshmi\.cache\puppeteer).
+For (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration., Functionality : getPurchaseReceiptPdf
+1:07:55 pm Platform : API, Module : Request Service, Error : TypeError: Invalid URL, Functionality : udfnSendMail_request
+1:09:52 pm Platform : API, Module : Pdf Generation, Error : Error: Could not find Chrome (ver. 132.0.6834.83). This can occur if either
+ 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or
+ 2. your cache path is incorrectly configured (which is: C:\Users\Padmalakshmi\.cache\puppeteer).
+For (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration., Functionality : getPurchaseReceiptPdf
+1:09:52 pm Platform : API, Module : Request Service, Error : TypeError: Invalid URL, Functionality : udfnSendMail_request
+1:14:05 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : SyncDebtor-create
+1:14:05 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncCreditor-create
+1:14:05 pm Platform : API, Module : syncCreatePurchase, Error : AxiosError: Request failed with status code 404, Functionality : syncCreatePurchase
+1:14:06 pm Platform : API, Module : syncCreateSales, Error : AxiosError: Request failed with status code 500, Functionality : syncCreateSales
+1:14:18 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : SyncDebtor-create
+1:14:18 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncCreditor-create
+1:14:18 pm Platform : API, Module : syncCreatePurchase, Error : AxiosError: Request failed with status code 404, Functionality : syncCreatePurchase
+1:14:18 pm Platform : API, Module : syncCreateSales, Error : AxiosError: Request failed with status code 500, Functionality : syncCreateSales
+1:16:17 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : SyncDebtor-create
+1:16:17 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncCreditor-create
+1:16:17 pm Platform : API, Module : syncCreatePurchase, Error : AxiosError: Request failed with status code 404, Functionality : syncCreatePurchase
+1:16:18 pm Platform : API, Module : syncCreateSales, Error : AxiosError: Request failed with status code 500, Functionality : syncCreateSales
+1:19:57 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : SyncDebtor-create
+1:19:57 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncCreditor-create
+1:19:57 pm Platform : API, Module : syncCreatePurchase, Error : AxiosError: Request failed with status code 404, Functionality : syncCreatePurchase
+1:19:57 pm Platform : API, Module : syncCreateSales, Error : AxiosError: Request failed with status code 500, Functionality : syncCreateSales
+1:20:41 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : SyncDebtor-create
+1:20:41 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncCreditor-create
+1:20:42 pm Platform : API, Module : syncCreatePurchase, Error : AxiosError: Request failed with status code 404, Functionality : syncCreatePurchase
+1:20:42 pm Platform : API, Module : syncCreateSales, Error : AxiosError: Request failed with status code 500, Functionality : syncCreateSales
+1:21:22 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : SyncDebtor-create
+1:21:23 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncCreditor-create
+1:21:23 pm Platform : API, Module : syncCreatePurchase, Error : AxiosError: Request failed with status code 404, Functionality : syncCreatePurchase
+1:21:23 pm Platform : API, Module : syncCreateSales, Error : AxiosError: Request failed with status code 500, Functionality : syncCreateSales
+1:25:06 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : SyncDebtor-create
+1:25:06 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncCreditor-create
+1:25:07 pm Platform : API, Module : syncCreatePurchase, Error : AxiosError: Request failed with status code 404, Functionality : syncCreatePurchase
+1:25:07 pm Platform : API, Module : syncCreateSales, Error : AxiosError: Request failed with status code 500, Functionality : syncCreateSales
+5:34:57 pm Platform : API, Module : refersh token, Error : JsonWebTokenError: invalid signature, Functionality : refreshtoken
+5:52:07 pm Platform : API, Module : Item, Error : AxiosError: Request failed with status code 417, Functionality : syncItem
+5:52:08 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : SyncDebtor-address
+5:52:08 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncCreditor-create
+5:52:08 pm Platform : API, Module : syncCreatePurchase, Error : AxiosError: Request failed with status code 404, Functionality : syncCreatePurchase
+5:52:09 pm Platform : API, Module : syncCreateSales, Error : AxiosError: Request failed with status code 500, Functionality : syncCreateSales
+5:52:09 pm Platform : API, Module : syncCreateSales, Error : AxiosError: Request failed with status code 500, Functionality : syncCreateSales
+6:28:41 pm Platform : API, Module : Item, Error : AxiosError: Request failed with status code 417, Functionality : syncItem
+6:28:43 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : SyncDebtor-address
+6:28:43 pm Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncCreditor-create
+6:28:43 pm Platform : API, Module : syncCreatePurchase, Error : AxiosError: Request failed with status code 404, Functionality : syncCreatePurchase
+6:28:44 pm Platform : API, Module : syncCreateSales, Error : AxiosError: Request failed with status code 500, Functionality : syncCreateSales
+6:28:44 pm Platform : API, Module : syncCreateSales, Error : AxiosError: Request failed with status code 500, Functionality : syncCreateSales

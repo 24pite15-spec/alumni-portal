@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header with Background Color</title>
+    <style>
+        /* Remove default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+            /* White background for the body */
+        }
+
+        header {
+            background-color: lightblue;
+            padding: 20px;
+            /* text-align: center; */
+        }
+
+        footer {
+            background-color: lavender;
+            padding: 20px;
+            /* text-align: center; */
+        }
+
+        .content {
+            padding: 20px;
+            /* text-align: center; */
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            background-color: lightblue;
+        }
+
+        .swapify {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Remove table borders */
+        th,
+        td {
+            border: none;
+        }
+
+        .point-mark {
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+        }
+
+        .text-wrap {
+            font-size: 15px;
+            font-weight: 800;
+            width: 58%;
+        }
+
+        @media screen and (max-width: 781px) {
+            .point-mark {
+                width: 18.7px;
+                height: 10px;
+                background-color: #000;
+                border-radius: 50%;
+                color: white;
+                text-align: center;
+                line-height: 30px;
+                margin-right: 10px;
+            }
+
+            .text-wrap {
+                font-size: 15px;
+                font-weight: 800;
+                width: 48%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header with light blue background -->
+    <!-- Header with light blue background -->
+    <header>
+        <div class="container">
+            <span>
+                <h2 class="swapify"><img src="../public/logo-circle.jpg" alt="" style="height: 30px;">
+                    <span style="margin-left: 10px;color: blue;">Swapify</span>
+                </h2>
+            </span>
+            <span>
+                <h2 style="color: blue;">Puchase Receipt</h2>
+            </span>
+        </div>
+
+        <!-- bar-code -->
+
+        <div class="container">
+            <span style="display: flex;margin-top: 17px;">
+                <div style="display: block;">
+                    <div>
+                        <span style="font-size: 15px;font-weight: 800;color: blue;">Date : </span> 16-01-2025
+                    </div>
+                </div>
+
+                <div style="display: block;margin-left: 80px;">
+                    <div>
+                        <span style="font-size: 15px;font-weight: 800;color: blue;">Reference Number: </span>
+                        QW23478ERhj
+                    </div>
+                </div>
+            </span>
+
+            <span>
+                <img src="../public/bar-code.jpg" alt="" style="height: 50px;">
+            </span>
+        </div>
+    </header>
+
+    <!-- Rest of the page content -->
+    <div class="content">
+        <!-- Table with two columns -->
+        <table>
+            <tr>
+                <td><strong style="color: blue;">Sales Details</strong>
+                    <hr style="margin-top: 10px;" />
+                </td>
+                <td><strong style="color: blue;">Trade-in Partner</strong>
+                    <hr style="margin-top: 10px;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 10px;">
+                        <span style="font-size: 15px; font-weight: 800;width: 40%;">Name</span>
+                        <span style="font-size: 15px; flex-grow: 1; text-align: left;word-spacing: 3px;
+    line-height: 18px;max-width: 380px;">A.Panimaya Beulah</span>
+                    </div>
+
+
+                    <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 10px;">
+                        <span style="font-size: 15px; font-weight: 800;;width: 40%;">Contact No</span>
+                        <span style="font-size: 15px; flex-grow: 1; text-align: left;word-spacing: 3px;
+    line-height: 13px;">3456789876</span>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 10px;">
+                        <span style="font-size: 15px; font-weight: 800;;width: 40%;">Place</span>
+                        <span style="font-size: 15px; flex-grow: 1; text-align: left;word-spacing: 3px;
+    line-height: 13px;">Chennai</span>
+                    </div>
+                </td>
+
+                <td>
+                    <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 10px;">
+                        <span style="font-size: 15px; font-weight: 800;width: 40%;">Store Name</span>
+                        <span style="font-size: 15px; flex-grow: 1; text-align: left;word-spacing: 3px;
+    line-height: 13px;">Smart Zone</span>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 10px;">
+                        <span class="text-wrap">Address</span>
+                        <span
+                            style="font-size: 15px; flex-grow: 1; text-align: left; word-spacing: 3px; line-height: 18px; overflow-wrap: break-word;">34,
+                            Nehru Street, Chennai - 629 001 .</span>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 10px;">
+                        <span style="font-size: 15px; font-weight: 800;;width: 40%;">Contact No</span>
+                        <span style="font-size: 15px; flex-grow: 1; text-align: left;word-spacing: 3px;
+    line-height: 13px;">3456789876</span>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 10px;">
+                        <span style="font-size: 15px; font-weight: 800;;width: 40%;">Place</span>
+                        <span style="font-size: 15px; flex-grow: 1; text-align: left;word-spacing: 3px;
+    line-height: 13px;">Chennai</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <h3>Description of the original product being
+            traded in</h3>
+
+
+        <table style="margin-top: 10px;">
+            <tr>
+                <td><strong style="color: blue;">Description of product trade-in</strong>
+                </td>
+                <td><strong style="color: blue;">IMEI / Serial Number</strong>
+                </td>
+                <td><strong style="color: blue;">Trade-in price of the original product (INR)</strong>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 10px;">
+                        <span style="font-size: 15px; flex-grow: 1; text-align: left;word-spacing: 3px;
+        line-height: 13px;">Phone 13 128GB Red</span>
+                    </div>
+                </td>
+                <td>
+                    <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 10px;">
+                        <span style="font-size: 15px; flex-grow: 1; text-align: left;word-spacing: 3px;
+        line-height: 13px;">456789876545678</span>
+                    </div>
+                </td>
+                <td>
+                    <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 10px;">
+                        <span style="font-size: 15px; flex-grow: 1; text-align: left;word-spacing: 3px;
+        line-height: 13px;">Rs. 14,400</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <hr />
+                </td>
+            </tr>
+        </table>
+
+        <h3>Benefit provided to the seller by the OEM on purchase of the new product from the
+            trade-in partner in
+            exchange of the trade-in of the original product</h3>
+
+
+        <table style="margin-top: 10px;">
+            <tr>
+                <td><strong style="color: blue;">New Device Name</strong>
+                </td>
+                <td><strong style="color: blue;">New IMEI / Serial Number</strong>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 10px;">
+                        <span style="font-size: 15px; flex-grow: 1; text-align: left;word-spacing: 3px;
+        line-height: 13px;">Samsung - Only trade-in offer</span>
+                    </div>
+                </td>
+                <td>
+                    <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 10px;">
+                        <span style="font-size: 15px; flex-grow: 1; text-align: left;word-spacing: 3px;
+        line-height: 13px;">897654345687654</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <hr />
+                </td>
+            </tr>
+        </table>
+
+        <h3>Terms and Conditions</h3>
+
+        <div style="display: flex; align-items: center;margin-top: 10px;">
+            <div style="width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;">
+            </div>
+            <span>Our Terms and Conditions were last updated on 16-01-2025</span>
+        </div>
+
+        <div style="display: flex; align-items: center;margin-top: 10px;">
+            <div style="width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;">
+            </div>
+            <span>Please read these terms and conditions carefully before using Our Service.</span>
+        </div>
+
+        <div style="display: flex; align-items: center;margin-top: 10px;">
+            <div class="point-mark">
+            </div>
+            <span>The words of which the initial letter is capitalized have meanings defined under the following
+                conditions. The following definitions shall have the same meaning regardless of whether they appear in
+                singular or in plural.</span>
+        </div>
+
+        <div style="display: flex; align-items: center;margin-top: 10px;">
+            <div class="point-mark">
+            </div>
+            <span>You are responsible for safeguarding the password that You use to access the Service and for any
+                activities or actions under Your password, whether Your password is with Our Service or a Third-Party
+                Social Media Service.</span>
+        </div>
+    </div>
+
+    <!-- Header with light blue background -->
+    <footer>
+        <!-- Table with two columns -->
+        <table>
+            <tr>
+                <td style="border-left: 3px solid blue;">
+                    <div style="display: flex;width: 100%; margin-bottom: 10px;">
+                        <span
+                            style="font-size: 15px; flex-grow: 1; text-align: left; word-spacing: 3px; line-height: 18px; overflow-wrap: break-word;">This
+                            article will get you started with creating your own custom Terms and Conditions agreement.
+                            We've also put together a Sample Terms and Conditions Template,Nehru Street - 34,
+                            Nehru Street, Chennai - 629 001</span>
+                    </div>
+                </td>
+                <td style="border-left: 3px solid blue;">
+                    <div style="display: flex; width: 100%; margin-bottom: 10px;">
+                        <span style="font-size: 15px; flex-grow: 1; text-align: left;word-spacing: 3px;
+    line-height: 13px;line-height: 18px;">This article will get you started with creating your own custom Terms and
+                            Conditions agreement.
+                            We've also put together a Sample Terms and Conditions Template.</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </footer>
+</body>
+
+</html>

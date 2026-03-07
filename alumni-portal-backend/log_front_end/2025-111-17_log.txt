@@ -1,0 +1,9 @@
+
+10:19:37 am Platform : Portal, Module : Device Brand, Info : Request failed with status code 400, Functionality : udfnGetProductCategoryList
+10:19:37 am Platform : Portal, Module : Device Brand, Info : Request failed with status code 400, Functionality : udfnGetDeviceBrandList
+10:19:51 am Platform : Portal, Module : Variant, Info : Request failed with status code 400, Functionality : udfnDeviceModelList
+10:20:00 am Platform : Portal, Module : Variant, Info : Request failed with status code 400, Functionality : udfnDeviceModelList
+10:20:21 am Platform : Portal, Module : Vendor Mapping, Info : Request failed with status code 400, Functionality : udfnGetProductCategoryList
+10:28:07 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+10:28:07 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+5:04:33 pm Platform : Portal, Module : Question, Info : Request failed with status code 400, Functionality : udfnGetDDList

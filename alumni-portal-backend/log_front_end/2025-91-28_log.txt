@@ -1,0 +1,72 @@
+
+9:25:29 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+9:25:30 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+9:25:30 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+11:19:49 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:37:31 pm Platform : Portal, Module : Product Category, Info : Request failed with status code 500, Functionality : udfnGetProductCategoryList
+3:37:40 pm Platform : Portal, Module : Product Category, Info : Request failed with status code 500, Functionality : udfnGetProductCategoryList
+3:37:45 pm Platform : Portal, Module : Product Category, Info : Request failed with status code 500, Functionality : udfnGetProductCategoryList
+3:38:08 pm Platform : Portal, Module : Product Category, Info : Request failed with status code 500, Functionality : udfnGetProductCategoryList
+3:38:18 pm Platform : Portal, Module : Product Category, Info : Request failed with status code 500, Functionality : udfnGetProductCategoryList
+3:38:58 pm Platform : Portal, Module : Product Category, Info : Request failed with status code 500, Functionality : udfnGetProductCategoryList
+3:39:06 pm Platform : Portal, Module : Product Category, Info : Request failed with status code 500, Functionality : udfnGetProductCategoryList
+3:39:21 pm Platform : Portal, Module : Product Category, Info : Request failed with status code 500, Functionality : udfnGetProductCategoryList
+3:57:39 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+3:57:39 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+3:58:02 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+3:58:02 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+3:58:33 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+3:58:33 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+3:58:50 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+3:58:50 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+3:59:24 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+3:59:24 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+3:59:27 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+3:59:27 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:00:01 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:00:01 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:00:43 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:00:43 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:01:05 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:03:48 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:03:48 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:04:07 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:04:07 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:04:59 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:04:59 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:05:35 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:05:35 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:05:56 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:05:56 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:06:06 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:06:06 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:07:14 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:08:02 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:08:16 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:08:48 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:08:52 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:09:26 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:09:34 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:09:42 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:09:48 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:10:02 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:12:04 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:12:41 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:13:18 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:14:05 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:15:33 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:17:40 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:17:44 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:17:51 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:18:41 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:18:43 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:19:08 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:19:50 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:19:58 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:20:19 pm Platform : Portal, Module : Fee Master, Info : Request failed with status code 500, Functionality : udfnGetFeeList
+4:21:58 pm Platform : Portal, Module : Fee Master, Info : setFeeList is not defined, Functionality : udfnGetFeeList
+7:10:07 pm Platform : Portal, Module : Device Model, Info : setInputFocus is not defined, Functionality : udfnSaveVendor
+7:12:23 pm Platform : Portal, Module : Device Model, Info : setInputFocus is not defined, Functionality : udfnSaveVendor
+7:14:35 pm Platform : Portal, Module : Device Model, Info : setOpen is not defined, Functionality : udfnSaveVendor
+7:15:04 pm Platform : Portal, Module : Device Model, Info : setInputFocus is not defined, Functionality : udfnSaveVendor
+7:15:37 pm Platform : Portal, Module : Device Model, Info : setOpen is not defined, Functionality : udfnSaveVendor

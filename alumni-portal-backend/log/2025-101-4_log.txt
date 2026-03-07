@@ -1,0 +1,50 @@
+
+10:02:38 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateItem
+10:35:34 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+10:35:55 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+10:36:02 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+10:36:10 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+10:37:10 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+10:37:27 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+10:38:45 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+10:38:57 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+10:41:27 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+10:41:39 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+10:43:37 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+10:47:25 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+10:47:30 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+10:58:21 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+11:13:04 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+11:15:39 am Platform : API, Module : UpdateItem, Error : Error: connect ETIMEDOUT 13.200.157.65:443, Functionality : syncUpdateItem
+11:16:25 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+11:16:41 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+11:17:02 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+11:18:31 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+11:18:45 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+11:20:26 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+11:20:48 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+11:24:00 am Platform : API, Module : Sync Finalcial Year, Error : Error: read ECONNRESET, Functionality : udfnSyncFinancialYear
+11:26:00 am Platform : API, Module : Sync Finalcial Year, Error : Error: read ECONNRESET, Functionality : udfnSyncFinancialYear
+11:49:08 am Platform : API, Module : DeleteItemGroup, Error : ReferenceError: response is not defined, Functionality : syncdeletItemGroup
+11:50:01 am Platform : API, Module : DeleteItemGroup, Error : ReferenceError: response is not defined, Functionality : syncdeletItemGroup
+12:22:07 pm Platform : API, Module : DeleteItemGroup, Error : ReferenceError: response is not defined, Functionality : syncdeletItemGroup
+12:24:27 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+12:24:29 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+12:24:30 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+12:24:32 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+12:26:41 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+2:07:28 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+2:10:59 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+4:36:11 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+4:43:28 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+4:47:42 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+4:49:33 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+4:55:03 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+4:57:58 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+4:58:02 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer
+4:58:16 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+5:28:54 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+6:13:04 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 417, Functionality : syncUpdateCustomer
+7:13:59 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateCustomer
+7:14:45 pm Platform : API, Module : UpdateCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateCustomer
+7:19:16 pm Platform : API, Module : DeleteCustomer, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteCustomer

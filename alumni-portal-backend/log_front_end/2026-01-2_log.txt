@@ -1,0 +1,18 @@
+
+9:52:25 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+9:52:25 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+9:52:38 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+9:52:38 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+9:52:38 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+1:11:20 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+1:11:21 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+3:08:48 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:08:48 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+4:00:50 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+4:01:17 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+4:38:00 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+4:38:00 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+4:38:03 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+4:38:03 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:45:16 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+6:45:16 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

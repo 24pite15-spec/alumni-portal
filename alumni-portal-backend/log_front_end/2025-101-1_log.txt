@@ -1,0 +1,10 @@
+
+10:25:47 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+10:26:04 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+10:26:04 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+1:26:23 pm Platform : Portal, Module : SalesReturn, Info : Converting circular structure to JSON
+    --> starting at object with constructor 'SVGSVGElement'
+    |     property '__reactFiber$gz7wr6obxme' -> object with constructor 'FiberNode'
+    --- property 'stateNode' closes the circle, Functionality : udfnSalesReturnStatusUpdate
+1:38:46 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+1:38:46 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

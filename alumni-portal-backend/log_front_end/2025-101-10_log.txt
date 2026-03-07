@@ -1,0 +1,9 @@
+
+9:12:11 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+9:12:12 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+10:07:54 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+10:07:55 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+1:15:10 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+1:15:10 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:13:06 pm Platform : Portal, Module : Partner Signup, Info : Request failed with status code 400, Functionality : udfnSavePartner
+6:13:15 pm Platform : Portal, Module : Partner Signup, Info : Request failed with status code 400, Functionality : udfnSavePartner

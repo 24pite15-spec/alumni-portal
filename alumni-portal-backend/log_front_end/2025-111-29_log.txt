@@ -1,0 +1,31 @@
+
+9:41:50 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+9:41:50 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+9:41:56 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+9:41:56 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+10:11:56 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+10:11:56 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+10:12:05 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+10:12:05 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+12:53:50 pm Platform : Portal, Module : Partner, Info : Request failed with status code 400, Functionality : udfnGetPartnerList
+12:55:40 pm Platform : Portal, Module : Partner, Info : Request failed with status code 400, Functionality : udfnGetPartnerList
+1:11:25 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+1:11:25 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+1:28:26 pm Platform : Portal, Module : Partner, Info : Request failed with status code 400, Functionality : udfnGetPartnerList
+1:28:44 pm Platform : Portal, Module : Partner, Info : Request failed with status code 400, Functionality : udfnGetPartnerList
+1:29:08 pm Platform : Portal, Module : Partner, Info : Request failed with status code 400, Functionality : udfnGetPartnerList
+1:29:22 pm Platform : Portal, Module : Partner, Info : Request failed with status code 400, Functionality : udfnGetPartnerList
+1:29:27 pm Platform : Portal, Module : Partner, Info : Request failed with status code 400, Functionality : udfnGetPartnerList
+1:29:36 pm Platform : Portal, Module : Partner, Info : Request failed with status code 400, Functionality : udfnGetPartnerList
+1:29:43 pm Platform : Portal, Module : Partner, Info : Request failed with status code 400, Functionality : udfnGetPartnerList
+1:57:49 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+1:57:49 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+2:02:03 pm Platform : Portal, Module : Store, Info : Request failed with status code 400, Functionality : udfnGetStoreDetails
+2:02:10 pm Platform : Portal, Module : Store, Info : Request failed with status code 400, Functionality : udfnGetStoreDetails
+2:03:24 pm Platform : Portal, Module : Store, Info : Request failed with status code 400, Functionality : udfnGetStoreDetails
+2:57:22 pm Platform : Portal, Module : Store, Info : Request failed with status code 400, Functionality : udfnGetStoreDetails
+2:57:46 pm Platform : Portal, Module : Store, Info : Request failed with status code 400, Functionality : udfnGetStoreDetails
+2:58:17 pm Platform : Portal, Module : Store, Info : Request failed with status code 400, Functionality : udfnGetStoreDetails
+2:58:26 pm Platform : Portal, Module : Store, Info : Request failed with status code 400, Functionality : udfnGetStoreDetails
+2:59:26 pm Platform : Portal, Module : Store, Info : id is not defined, Functionality : udfnGetStoreDetails
+2:59:32 pm Platform : Portal, Module : Store, Info : id is not defined, Functionality : udfnGetStoreDetails

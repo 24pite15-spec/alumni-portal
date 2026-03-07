@@ -1,0 +1,11 @@
+
+1:51:56 pm Platform : Portal, Module : Request-Add, Info : Request failed with status code 400, Functionality : udfnGetDDList
+1:54:28 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+1:54:28 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+1:54:28 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+3:01:45 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:01:47 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+3:03:41 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:03:41 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+5:51:44 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+5:51:44 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

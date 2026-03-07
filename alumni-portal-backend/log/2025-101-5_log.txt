@@ -1,0 +1,91 @@
+
+10:33:56 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+10:34:13 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+10:36:41 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+10:38:10 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+10:39:03 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+10:39:22 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+10:39:46 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+10:42:16 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+10:46:02 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+10:54:45 am Platform : API, Module : UpdateItem, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItem
+12:06:11 pm Platform : API, Module : DeleteItemGroup, Error : ReferenceError: response is not defined, Functionality : syncdeletItemGroup
+12:06:12 pm Platform : API, Module : DeleteItemGroup, Error : ReferenceError: response is not defined, Functionality : syncdeletItemGroup
+12:15:19 pm Platform : API, Module : Vendor Master, Error : error: missing FROM-clause entry for table "s", Functionality : setVendor
+12:16:22 pm Platform : API, Module : Vendor Master, Error : error: missing FROM-clause entry for table "s", Functionality : setVendor
+12:46:54 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:05:14 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:06:42 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:11:01 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:18:52 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:20:06 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:24:24 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:29:37 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:38:01 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:40:59 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+1:43:02 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+2:05:31 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+2:50:27 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+3:08:34 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : syncDebtor
+3:23:25 pm Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 404, Functionality : syncDebtor
+3:34:17 pm Platform : API, Module : Supplier, Error : TypeError: Cannot destructure property 'supplier_name' of 'req.body' as it is undefined., Functionality : syncSupplier
+3:35:38 pm Platform : API, Module : Supplier, Error : TypeError: Cannot destructure property 'supplier_name' of 'req.body' as it is undefined., Functionality : syncSupplier
+3:38:14 pm Platform : API, Module : Supplier, Error : TypeError: Cannot destructure property 'supplier_name' of 'req.body' as it is undefined., Functionality : syncSupplier
+3:39:29 pm Platform : API, Module : Supplier, Error : TypeError: Cannot destructure property 'supplier_name' of 'req.body' as it is undefined., Functionality : syncSupplier
+3:42:02 pm Platform : API, Module : Supplier, Error : TypeError: Cannot destructure property 'supplier_name' of 'req.body' as it is undefined., Functionality : syncSupplier
+3:46:57 pm Platform : API, Module : Supplier, Error : TypeError: Cannot destructure property 'supplier_name' of 'req.body' as it is undefined., Functionality : syncSupplier
+3:50:10 pm Platform : API, Module : Supplier, Error : TypeError: Cannot destructure property 'supplier_name' of 'req.body' as it is undefined., Functionality : syncSupplier
+4:01:06 pm Platform : API, Module : Supplier, Error : ReferenceError: supplier_name is not defined, Functionality : syncSupplier
+4:02:00 pm Platform : API, Module : Supplier, Error : ReferenceError: Cannot access 'data' before initialization, Functionality : syncSupplier
+4:19:40 pm Platform : API, Module : Partner Master, Error : ReferenceError: state is not defined, Functionality : updatePartner
+4:21:08 pm Platform : API, Module : Partner Master, Error : ReferenceError: state is not defined, Functionality : updatePartner
+4:21:58 pm Platform : API, Module : Partner Master, Error : ReferenceError: state is not defined, Functionality : updatePartner
+4:26:57 pm Platform : API, Module : Partner Master, Error : ReferenceError: state is not defined, Functionality : updatePartner
+4:30:32 pm Platform : API, Module : Partner Master, Error : TypeError: Cannot read properties of undefined (reading 'pr_state'), Functionality : updatePartner
+4:31:44 pm Platform : API, Module : Partner Master, Error : error: invalid input syntax for type bigint: "Tamil Naduf", Functionality : updatePartner
+4:35:47 pm Platform : API, Module : Partner Master, Error : TypeError: Cannot read properties of undefined (reading 'pr_state'), Functionality : updatePartner
+4:42:00 pm Platform : API, Module : Partner Master, Error : TypeError: Cannot read properties of undefined (reading 'pr_name'), Functionality : updatePartner
+4:42:50 pm Platform : API, Module : Partner Master, Error : TypeError: Cannot read properties of undefined (reading 'pr_name'), Functionality : updatePartner
+5:17:45 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 417, Functionality : syncCreateAccount
+5:22:29 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 417, Functionality : syncCreateAccount
+5:23:23 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 417, Functionality : syncCreateAccount
+5:28:17 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 417, Functionality : syncCreateAccount
+5:28:24 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 417, Functionality : syncCreateAccount
+5:29:07 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 417, Functionality : syncCreateAccount
+5:29:49 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 417, Functionality : syncCreateAccount
+5:30:23 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 417, Functionality : syncCreateAccount
+5:30:53 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 417, Functionality : syncCreateAccount
+5:32:26 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 417, Functionality : syncCreateAccount
+5:33:51 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 417, Functionality : syncCreateAccount
+5:35:53 pm Platform : API, Module : CreateAccount, Error : AxiosError: Request failed with status code 417, Functionality : syncCreateAccount
+6:29:26 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteAccount
+6:29:29 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteAccount
+6:29:31 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteAccount
+6:33:50 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:34:50 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:35:23 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:35:28 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:35:47 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:36:10 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:36:46 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:36:59 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:37:35 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:39:13 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:40:07 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:41:16 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:41:37 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:42:54 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:43:32 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:50:36 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteAccount
+6:52:57 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteAccount
+6:53:40 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:54:14 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteAccount
+6:54:50 pm Platform : API, Module : Item Group, Error : AxiosError: Request failed with status code 404, Functionality : syncUpdateItemGroup
+6:54:57 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteAccount
+6:55:58 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteAccount
+6:56:18 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteAccount
+6:57:01 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteAccount
+6:58:24 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteAccount
+6:59:05 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 404, Functionality : syncDeleteAccount
+6:59:50 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteAccount
+7:05:49 pm Platform : API, Module : DeleteAccount, Error : AxiosError: Request failed with status code 417, Functionality : syncDeleteAccount

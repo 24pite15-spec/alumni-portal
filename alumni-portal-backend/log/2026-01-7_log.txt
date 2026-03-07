@@ -1,0 +1,15 @@
+
+9:27:49 am Platform : API, Module : refersh token, Error : TokenExpiredError: jwt expired, Functionality : refreshtoken
+11:25:12 am Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : SyncDebtor-create
+11:25:12 am Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncCreditor-create
+11:25:12 am Platform : API, Module : syncCreatePurchase, Error : AxiosError: Request failed with status code 404, Functionality : syncCreatePurchase
+11:25:13 am Platform : API, Module : syncCreateSales, Error : AxiosError: Request failed with status code 500, Functionality : syncCreateSales
+11:30:23 am Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : SyncDebtor-create
+11:30:23 am Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncCreditor-create
+11:30:23 am Platform : API, Module : syncCreatePurchase, Error : AxiosError: Request failed with status code 404, Functionality : syncCreatePurchase
+11:30:24 am Platform : API, Module : syncCreateSales, Error : AxiosError: Request failed with status code 500, Functionality : syncCreateSales
+11:33:32 am Platform : API, Module : Customer, Error : AxiosError: Request failed with status code 417, Functionality : SyncDebtor-create
+11:33:32 am Platform : API, Module : Supplier, Error : AxiosError: Request failed with status code 417, Functionality : syncCreditor-create
+11:33:32 am Platform : API, Module : syncCreatePurchase, Error : AxiosError: Request failed with status code 404, Functionality : syncCreatePurchase
+11:33:32 am Platform : API, Module : syncCreateSales, Error : AxiosError: Request failed with status code 500, Functionality : syncCreateSales
+1:44:00 pm Platform : API, Module : Receipt, Error : Error: read ECONNRESET, Functionality : syncReceipt

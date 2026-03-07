@@ -1,0 +1,17 @@
+
+6:26:00 pm Platform : API, Module : Receipt, Error : Error: certificate has expired, Functionality : syncReceipt
+6:26:00 pm Platform : API, Module : Payment, Error : Error: certificate has expired, Functionality : syncPayment
+6:27:00 pm Platform : API, Module : Receipt, Error : Error: certificate has expired, Functionality : syncReceipt
+6:27:00 pm Platform : API, Module : Payment, Error : Error: certificate has expired, Functionality : syncPayment
+6:29:00 pm Platform : API, Module : Receipt, Error : Error: certificate has expired, Functionality : syncReceipt
+6:29:00 pm Platform : API, Module : Payment, Error : Error: certificate has expired, Functionality : syncPayment
+6:30:00 pm Platform : API, Module : Receipt, Error : Error: certificate has expired, Functionality : syncReceipt
+6:30:00 pm Platform : API, Module : Payment, Error : Error: certificate has expired, Functionality : syncPayment
+6:31:00 pm Platform : API, Module : Receipt, Error : Error: certificate has expired, Functionality : syncReceipt
+6:31:00 pm Platform : API, Module : Payment, Error : Error: certificate has expired, Functionality : syncPayment
+6:32:00 pm Platform : API, Module : Receipt, Error : Error: certificate has expired, Functionality : syncReceipt
+6:32:01 pm Platform : API, Module : Payment, Error : Error: certificate has expired, Functionality : syncPayment
+6:33:00 pm Platform : API, Module : Receipt, Error : Error: certificate has expired, Functionality : syncReceipt
+6:33:01 pm Platform : API, Module : Payment, Error : Error: certificate has expired, Functionality : syncPayment
+6:38:00 pm Platform : API, Module : Receipt, Error : Error: certificate has expired, Functionality : syncReceipt
+6:38:00 pm Platform : API, Module : Payment, Error : Error: certificate has expired, Functionality : syncPayment

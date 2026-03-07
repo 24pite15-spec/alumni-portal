@@ -1,0 +1,7 @@
+
+10:18:24 am Platform : Portal, Module : Device Model, Info : Network Error, Functionality : udfnSaveDeviceModel
+10:24:31 am Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+10:24:31 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+12:07:56 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+12:07:56 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+5:17:09 pm Platform : Portal, Module : Product Category, Info : Network Error, Functionality : udfnSaveProductCategory

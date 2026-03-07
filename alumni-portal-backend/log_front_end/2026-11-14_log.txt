@@ -1,0 +1,7 @@
+
+12:00:35 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+12:00:35 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+12:00:35 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+12:07:35 pm Platform : Portal, Module : Request List, Info : message.toLowerCase is not a function, Functionality : udfnHandleReset
+12:18:56 pm Platform : Portal, Module : Request List, Info : message.toLowerCase is not a function, Functionality : udfnHandleReset
+12:19:08 pm Platform : Portal, Module : Request List, Info : message.toLowerCase is not a function, Functionality : udfnHandleReset

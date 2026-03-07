@@ -1,0 +1,7 @@
+
+9:52:33 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+9:52:33 am Platform : Portal, Module : vendor mapping, Info : EXPIRED_TOKEN is not defined, Functionality : udfnGetFeeList
+9:52:33 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+9:52:33 am Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+3:58:02 pm Platform : Portal, Module : Idle Timeout, Info : idle timeout, Functionality : handleLogout
+3:58:03 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout

@@ -1,0 +1,24 @@
+
+3:44:02 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : getRefreshToken
+3:44:03 pm Platform : Portal, Module : auth-service, Info : auth-service, Functionality : userLogout
+6:56:49 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+6:56:57 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+6:57:27 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+6:58:36 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+6:59:15 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+6:59:22 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+6:59:27 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+6:59:40 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+6:59:42 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+7:00:03 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+7:00:34 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+7:00:40 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+7:00:49 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+7:00:56 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+7:01:02 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+7:01:08 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+7:02:13 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+7:03:28 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+7:03:51 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+7:04:54 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
+7:05:02 pm Platform : Portal, Module : Question, Info : setRequestList is not defined, Functionality : udfnGetRequestList
