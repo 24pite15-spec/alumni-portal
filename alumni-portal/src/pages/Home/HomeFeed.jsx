@@ -26,12 +26,15 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 // initialPosts kept for fallback but normally feed is loaded from server
 const initialPosts = [];
 
-// ✅ Helper function to properly construct image URLs
+// ✅ Helper function to properly construct image URLs.  We also guard
+// against old blob:// URLs that were accidentally stored in the database
+// during an earlier development phase; those don’t survive a reload so we
+// pretend they don’t exist.
 const getImageUrl = (post_image_path, image_url) => {
   if (post_image_path) {
     return `${API_BASE_URL}/${post_image_path}`;
   }
-  if (image_url) {
+  if (image_url && !image_url.startsWith("blob:")) {
     return image_url; // External URLs are used directly
   }
   return "";
@@ -101,27 +104,40 @@ const handlePost = async () => {
       return;
     }
 
+    let postImagePath = null;
+    let imageUrl = null;
+
+    // If the user picked a local file we must upload it first; blob
+    // URLs don't survive a page reload.  If they pasted an external URL we
+    // can keep it in `imageUrl`.
+    if (selectedImageFile) {
+      const form = new FormData();
+      form.append("image", selectedImageFile);
+      const uploadRes = await postsAPI.uploadImage(form);
+      if (!uploadRes || !uploadRes.imagePath) {
+        throw new Error(uploadRes?.message || "Image upload failed");
+      }
+      postImagePath = uploadRes.imagePath;
+    } else if (selectedImage) {
+      // a plain string – likely an external link
+      imageUrl = selectedImage;
+    }
+
     const payload = {
       userId: user.userId,
       postDescription: postText || null,
-      imageUrl: selectedImage || null,   // goes to image_link
-      postImagePath: null                // keep null unless using upload
+      postImagePath, // either path from server or null
+      imageUrl,      // external URL or null
     };
 
-    const res = await fetch("http://localhost:5000/posts/create", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
+    // use the centralized API helper so the base URL picks up VITE_API_BASE_URL
+    const postCreateRes = await postsAPI.create(payload);
+    // `postsAPI.create` already throws on non-OK, so we can assume success
+    const data = postCreateRes; // rename for consistency
 
-    const data = await res.json();
-
-    if (!res.ok) {
-      throw new Error(data.message || "Post failed");
-    }
-
-    // ✅ FIXED: Refresh posts from server to get persistent image URLs
-    postsAPI.list()
+    // refresh posts from backend to pick up newly created record
+    postsAPI
+      .list()
       .then((data) => {
         if (Array.isArray(data)) {
           const converted = data.map((p) => ({
@@ -141,9 +157,10 @@ const handlePost = async () => {
 
     setPostText("");
     setSelectedImage("");
+    setSelectedImageFile(null);
   } catch (err) {
     console.error("Post error:", err);
-    alert("Failed to create post");
+    alert(err.message || "Failed to create post");
   }
 };
 

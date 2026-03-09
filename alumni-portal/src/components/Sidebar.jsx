@@ -26,7 +26,7 @@ const Sidebar = () => {
   const displayName = user.fullName || user.email || "";
   // Conditionally include admin dashboard in menu
   const dynamicMenuItems = [
-    { text: "Home", icon: <HomeOutlinedIcon />, path: "/home" },
+    { text: "Feeds", icon: <HomeOutlinedIcon />, path: "/home" },
     { text: "Alumni Profile", icon: <PeopleOutlineIcon />, path: "/alumni" },
     // hide jobs link for administrators
     ...(!isAdmin ? [{ text: "Job", icon: <WorkOutlineIcon />, path: "/job" }] : []),

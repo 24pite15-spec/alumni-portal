@@ -813,6 +813,28 @@ app.post("/events/upload-image", (req, res, next) => {
 	});
 });
 
+// ----------------------------------------------------------------
+// Home‑feed post image upload (was missing earlier, causing 404s)
+// ----------------------------------------------------------------
+app.post("/posts/upload-image", (req, res, next) => {
+	upload.single("image")(req, res, (err) => {
+		if (err) {
+			console.error("❌ Post image upload error:", err);
+			return handleMulterErrors(err, req, res, next);
+		}
+
+		if (!req.file) {
+			return res.status(400).json({ message: "No file uploaded" });
+		}
+
+		const imagePath = `uploads/${req.file.filename}`;
+		res.status(200).json({
+			message: "Image uploaded successfully",
+			imagePath,
+		});
+	});
+});
+
 app.post("/events", (req, res) => {
 	const {
 		event_name,

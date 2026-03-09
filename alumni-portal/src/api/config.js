@@ -74,12 +74,19 @@ export const profileAPI = {
 // -----------------------------
 export const postsAPI = {
   // payload is JSON object { userId, fullName, year, postDescription, postImagePath, imageUrl }
-  create: (payload) =>
-    fetch(`${API_BASE_URL}/posts/create`, {
+  create: async (payload) => {
+    const res = await fetch(`${API_BASE_URL}/posts/create`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
-    }).then((res) => res.json()),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      // bubble up backend message if available
+      throw new Error(data.message || `Post creation failed: ${res.status}`);
+    }
+    return data;
+  },
 
   list: () =>
     fetch(`${API_BASE_URL}/posts`, { method: "GET" }).then((res) => res.json()),
@@ -94,11 +101,15 @@ export const postsAPI = {
       body: JSON.stringify({ userId }),
     }).then((res) => res.json()),
 
-  uploadImage: (formData) =>
-    fetch(`${API_BASE_URL}/posts/upload-image`, {
+  uploadImage: async (formData) => {
+    const res = await fetch(`${API_BASE_URL}/posts/upload-image`, {
       method: "POST",
       body: formData,
-    }).then((res) => res.json()),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || `Upload failed: ${res.status}`);
+    return data;
+  },
 };
 
 // -----------------------------
