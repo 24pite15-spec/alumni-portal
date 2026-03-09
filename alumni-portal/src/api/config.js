@@ -118,11 +118,22 @@ export const adminAPI = {
     return res.json();
   },
 
-  updateUserStatus: async (email, status) => {
+  // `status` is used when approving/rejecting a PENDING user.  `action`
+  // toggles ACTIVE/INACTIVE for already-approved accounts.  The backend
+  // handler accepts either field (or both) and validates them, so we build a
+  // payload accordingly.
+  updateUserStatus: async (email, status = undefined, action = undefined) => {
+    // build body with only the properties that are defined; avoids sending
+    // `{status: undefined}` which some servers might treat as a deliberate
+    // null value.
+    const payload = { email };
+    if (status !== undefined) payload.status = status;
+    if (action !== undefined) payload.action = action;
+
     const res = await fetch(`${API_BASE_URL}/admin/update-status`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, status }),
+      body: JSON.stringify(payload),
     });
     if (res.status === 404) {
       throw new Error("admin/update-status not available");

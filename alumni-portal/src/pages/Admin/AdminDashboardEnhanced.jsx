@@ -17,7 +17,6 @@ import {
   CircularProgress,
   Tooltip,
   Dialog,
-  DialogTitle,
   DialogContent,
   DialogActions,
   Snackbar,
@@ -31,6 +30,7 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
+  Switch,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -39,8 +39,8 @@ import CloseIcon from "@mui/icons-material/Close";
 
 const AdminDashboard = () => {
   const theme = useTheme();
-
   const navigate = useNavigate();
+
   useEffect(() => {
     const user = getStoredUser();
     if (!user || user.role !== "admin") {
@@ -54,13 +54,12 @@ const AdminDashboard = () => {
   const [confirmDialog, setConfirmDialog] = useState({
     open: false,
     email: null,
-    actionType: null, // "status" or "action"
+    actionType: null,
     actionValue: null,
   });
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "success" });
 
-  // PAGINATION STATE
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage, setRecordsPerPage] = useState(10);
 
@@ -74,7 +73,7 @@ const AdminDashboard = () => {
     try {
       const data = await adminAPI.getUsers();
       setUsers(Array.isArray(data) ? data : []);
-      setCurrentPage(1); // Reset to page 1 when data refreshes
+      setCurrentPage(1);
       if (Array.isArray(data) && data.length === 0) {
         setError("No users found or admin API not available.");
       }
@@ -102,16 +101,16 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     if (!confirmDialog.open) {
-      document.querySelectorAll('.MuiBackdrop-root').forEach((b) => {
+      document.querySelectorAll(".MuiBackdrop-root").forEach((b) => {
         if (!document.body.contains(b.closest('[role="presentation"]'))) {
           b.remove();
         }
       });
-      const root = document.getElementById('root');
-      if (root && root.getAttribute('aria-hidden') === 'true') {
-        root.removeAttribute('aria-hidden');
+      const root = document.getElementById("root");
+      if (root && root.getAttribute("aria-hidden") === "true") {
+        root.removeAttribute("aria-hidden");
       }
-      if (document.activeElement && typeof document.activeElement.blur === 'function') {
+      if (document.activeElement && typeof document.activeElement.blur === "function") {
         document.activeElement.blur();
       }
     }
@@ -121,50 +120,35 @@ const AdminDashboard = () => {
     const { email, actionType, actionValue } = confirmDialog;
     setConfirmLoading(true);
     try {
-      // ✅ Send appropriate parameters based on actionType
       if (actionType === "status") {
-        // Sending status parameter
-        await adminAPI.updateUserStatus(email, actionValue);
+        // `status` branch, action stays undefined
+        await adminAPI.updateUserStatus(email, actionValue, undefined);
       } else if (actionType === "action") {
-        // Sending action parameter
-        await adminAPI.updateUserStatus(email, null, actionValue);
+        // `action` branch, status stays undefined
+        await adminAPI.updateUserStatus(email, undefined, actionValue);
       }
 
       await fetchUsers();
-      
-      if (actionValue === "REJECTED") {
-        setSnackbar({ 
-          open: true, 
-          message: `User ${email} has been rejected and removed.`, 
-          severity: 'success' 
-        });
-      } else if (actionValue === "APPROVED") {
-        setSnackbar({ 
-          open: true, 
-          message: `User ${email} has been accepted and set to Active.`, 
-          severity: 'success' 
-        });
-      } else if (actionValue === "INACTIVE") {
-        setSnackbar({ 
-          open: true, 
-          message: `User ${email} is now Inactive.`, 
-          severity: 'success' 
-        });
-      } else if (actionValue === "ACTIVE") {
-        setSnackbar({ 
-          open: true, 
-          message: `User ${email} is now Active.`, 
-          severity: 'success' 
-        });
-      }
+
+      const messages = {
+        REJECTED: `User ${email} has been rejected and removed.`,
+        APPROVED: `User ${email} has been accepted and set to Active.`,
+        INACTIVE: `User ${email} is now Inactive.`,
+        ACTIVE: `User ${email} is now Active.`,
+      };
+      setSnackbar({
+        open: true,
+        message: messages[actionValue] || "Updated successfully.",
+        severity: "success",
+      });
     } catch (err) {
       console.error(err);
-      if (err.message.includes("not available")) {
-        setError("Admin actions are not supported by this backend");
-      } else {
-        setError("Unable to update status. Try again.");
-      }
-      setSnackbar({ open: true, message: 'Unable to update status', severity: 'error' });
+      // if the server returned a message property, try to surface it
+      setSnackbar({
+        open: true,
+        message: err.message || "Unable to update status. Try again.",
+        severity: "error",
+      });
     } finally {
       setConfirmLoading(false);
       closeConfirmDialog();
@@ -175,13 +159,10 @@ const AdminDashboard = () => {
     return <Slide direction="down" ref={ref} {...props} />;
   });
 
-  // Filter users: show PENDING and APPROVED only (hide REJECTED)
-  const filteredUsers = users.filter(user => {
-    const status = String(user.status).toUpperCase();
-    return status !== "REJECTED";
-  });
+  const filteredUsers = users.filter(
+    (user) => String(user.status).toUpperCase() !== "REJECTED"
+  );
 
-  // PAGINATION LOGIC
   const totalPages = Math.ceil(filteredUsers.length / recordsPerPage);
   const startIndex = (currentPage - 1) * recordsPerPage;
   const endIndex = startIndex + recordsPerPage;
@@ -189,14 +170,20 @@ const AdminDashboard = () => {
 
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
-    // Scroll to top of table
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleRecordsPerPageChange = (event) => {
     setRecordsPerPage(event.target.value);
     setCurrentPage(1);
   };
+
+  const dialogColor =
+    confirmDialog.actionValue === "APPROVED" || confirmDialog.actionValue === "ACTIVE"
+      ? "#16a34a"
+      : confirmDialog.actionValue === "REJECTED"
+      ? "#ef4444"
+      : "#9e9e9e";
 
   return (
     <Box
@@ -207,6 +194,7 @@ const AdminDashboard = () => {
         minHeight: "100vh",
       }}
     >
+      {/* ── Page Heading ── */}
       <Box sx={{ mb: 4 }}>
         <Typography
           variant="h3"
@@ -221,10 +209,7 @@ const AdminDashboard = () => {
         >
           Admin Dashboard
         </Typography>
-        <Typography
-          variant="body2"
-          sx={{ color: "#666", fontWeight: 500 }}
-        >
+        <Typography variant="body2" sx={{ color: "#666", fontWeight: 500 }}>
           Manage and verify user accounts
         </Typography>
       </Box>
@@ -238,41 +223,22 @@ const AdminDashboard = () => {
           background: "#ffffff",
         }}
       >
-        <Box
-          sx={{
-            background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-            p: 3,
-          }}
-        >
-          <Stack
-            direction="row"
-            alignItems="center"
-            justifyContent="space-between"
-          >
+        {/* ── Purple header bar ── */}
+        <Box sx={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)", p: 3 }}>
+          <Stack direction="row" alignItems="center" justifyContent="space-between">
             <Box>
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: 700,
-                  color: "#ffffff",
-                  fontSize: 18,
-                  mb: 0.5,
-                }}
-              >
+              <Typography variant="h6" sx={{ fontWeight: 700, color: "#ffffff", fontSize: 18, mb: 0.5 }}>
                 User Management & Verification
               </Typography>
-              <Typography
-                variant="caption"
-                sx={{ color: "rgba(255, 255, 255, 0.8)" }}
-              >
+              <Typography variant="caption" sx={{ color: "rgba(255,255,255,0.8)" }}>
                 Review and manage user accounts ({filteredUsers.length} total)
               </Typography>
             </Box>
-
             <Stack direction="row" spacing={1.5} alignItems="center">
               <Button
                 onClick={fetchUsers}
                 disabled={loading}
+                variant="contained"
                 sx={{
                   backgroundColor: "#ffffff",
                   color: "#667eea",
@@ -285,112 +251,78 @@ const AdminDashboard = () => {
                   "&:hover": {
                     backgroundColor: "#f0f0ff",
                     transform: "translateY(-2px)",
-                    boxShadow: "0 8px 20px rgba(102, 126, 234, 0.3)",
+                    boxShadow: "0 8px 20px rgba(102,126,234,0.3)",
                   },
                   "&:disabled": {
-                    backgroundColor: "rgba(255, 255, 255, 0.6)",
-                    color: "rgba(102, 126, 234, 0.5)",
+                    backgroundColor: "rgba(255,255,255,0.6)",
+                    color: "rgba(102,126,234,0.5)",
                   },
                 }}
-                variant="contained"
               >
                 🔄 Refresh
               </Button>
-              {loading && (
-                <CircularProgress
-                  size={24}
-                  sx={{ color: "#ffffff" }}
-                  thickness={4}
-                />
-              )}
+              {loading && <CircularProgress size={24} sx={{ color: "#ffffff" }} thickness={4} />}
             </Stack>
           </Stack>
         </Box>
 
+        {/* ── Error Banner ── */}
         {error && (
           <Box
             sx={{
               px: 3,
               pt: 2,
               pb: 1,
-              background: "linear-gradient(135deg, rgba(211, 47, 47, 0.1) 0%, rgba(229, 57, 53, 0.05) 100%)",
+              background:
+                "linear-gradient(135deg, rgba(211,47,47,0.1) 0%, rgba(229,57,53,0.05) 100%)",
               borderLeft: "4px solid #d32f2f",
-              borderRadius: 1,
               mb: 2,
             }}
           >
-            <Typography
-              sx={{
-                color: "#d32f2f",
-                fontWeight: 700,
-                fontSize: 14,
-              }}
-            >
+            <Typography sx={{ color: "#d32f2f", fontWeight: 700, fontSize: 14 }}>
               ⚠️ {error}
             </Typography>
           </Box>
         )}
 
+        {/* ── Table ── */}
         <TableContainer sx={{ backgroundColor: "#ffffff" }}>
           <Table sx={{ minWidth: 750 }}>
             <TableHead>
               <TableRow
                 sx={{
                   background: "linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%)",
-                  borderBottom: `3px solid #667eea`,
-                  "& .MuiTableCell-head": {
-                    padding: "18px 14px",
-                  },
+                  borderBottom: "3px solid #667eea",
+                  "& .MuiTableCell-head": { padding: "18px 14px" },
                 }}
               >
-                <TableCell sx={{ fontWeight: 800, fontSize: 13, color: "#667eea", textTransform: "uppercase", letterSpacing: 0.5 }}>
-                  Name
-                </TableCell>
-                <TableCell sx={{ fontWeight: 800, fontSize: 13, color: "#667eea", textTransform: "uppercase", letterSpacing: 0.5 }}>
-                  Phone
-                </TableCell>
-                <TableCell sx={{ fontWeight: 800, fontSize: 13, color: "#667eea", textTransform: "uppercase", letterSpacing: 0.5 }}>
-                  Department
-                </TableCell>
-                <TableCell sx={{ fontWeight: 800, fontSize: 13, color: "#667eea", textTransform: "uppercase", letterSpacing: 0.5 }}>
-                  Year
-                </TableCell>
-                <TableCell sx={{ fontWeight: 800, fontSize: 13, color: "#667eea", textTransform: "uppercase", letterSpacing: 0.5 }}>
-                  Email
-                </TableCell>
-                <TableCell sx={{ fontWeight: 800, fontSize: 13, color: "#667eea", textTransform: "uppercase", letterSpacing: 0.5 }}>
-                  Status
-                </TableCell>
-                <TableCell sx={{ fontWeight: 800, fontSize: 13, color: "#667eea", textTransform: "uppercase", letterSpacing: 0.5 }}>
-                  Action
-                </TableCell>
-                <TableCell
-                  align="right"
-                  sx={{ fontWeight: 800, fontSize: 13, color: "#667eea", textTransform: "uppercase", letterSpacing: 0.5 }}
-                >
-                  Controls
-                </TableCell>
+                {["Name", "Phone", "Department", "Year", "Email", "Status", "Action"].map((h) => (
+                  <TableCell
+                    key={h}
+                    sx={{
+                      fontWeight: 800,
+                      fontSize: 13,
+                      color: "#667eea",
+                      textTransform: "uppercase",
+                      letterSpacing: 0.5,
+                    }}
+                  >
+                    {h}
+                  </TableCell>
+                ))}
               </TableRow>
             </TableHead>
 
             <TableBody>
               {filteredUsers.length === 0 && !loading ? (
                 <TableRow>
-                  <TableCell colSpan={8} align="center" sx={{ py: 10 }}>
-                    <Box sx={{ textAlign: "center" }}>
-                      <Typography
-                        variant="h6"
-                        sx={{ color: "#999", fontSize: 18, fontWeight: 600, mb: 1 }}
-                      >
-                        📭 No pending users
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        sx={{ color: "#bbb", fontSize: 14 }}
-                      >
-                        All users have been reviewed
-                      </Typography>
-                    </Box>
+                  <TableCell colSpan={7} align="center" sx={{ py: 10 }}>
+                    <Typography variant="h6" sx={{ color: "#999", fontSize: 18, fontWeight: 600, mb: 1 }}>
+                      📭 No pending users
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: "#bbb", fontSize: 14 }}>
+                      All users have been reviewed
+                    </Typography>
                   </TableCell>
                 </TableRow>
               ) : (
@@ -399,6 +331,7 @@ const AdminDashboard = () => {
                   const userAction = String(user.action || "ACTIVE").toUpperCase();
                   const isPending = userStatus === "PENDING";
                   const isApproved = userStatus === "APPROVED";
+                  const isActive = userAction === "ACTIVE";
 
                   return (
                     <TableRow
@@ -406,61 +339,46 @@ const AdminDashboard = () => {
                       hover
                       sx={{
                         backgroundColor: index % 2 === 0 ? "#ffffff" : "#f9fafb",
-                        borderBottom: `1px solid #e5e7eb`,
+                        borderBottom: "1px solid #e5e7eb",
                         transition: "all 0.2s ease-in-out",
                         "&:hover": {
                           backgroundColor: "#f0f4ff",
-                          boxShadow: "0 4px 12px rgba(102, 126, 234, 0.08) inset",
+                          boxShadow: "0 4px 12px rgba(102,126,234,0.08) inset",
                         },
-                        "& .MuiTableCell-body": {
-                          padding: "16px 14px",
-                        },
+                        "& .MuiTableCell-body": { padding: "16px 14px" },
                       }}
                     >
+                      {/* Name */}
                       <TableCell sx={{ fontWeight: 700, fontSize: 14, color: "#1a1a1a" }}>
                         {user.name || "—"}
                       </TableCell>
+
+                      {/* Phone */}
                       <TableCell sx={{ fontSize: 14, color: "#555" }}>
                         {user.phone_number || "—"}
                       </TableCell>
+
+                      {/* Department */}
                       <TableCell sx={{ fontSize: 14, color: "#555" }}>
                         {user.department || "—"}
                       </TableCell>
+
+                      {/* Year */}
                       <TableCell sx={{ fontSize: 14, color: "#555" }}>
                         {user.year_of_passout || "—"}
                       </TableCell>
-                      <TableCell
-                        sx={{
-                          color: "#667eea",
-                          fontWeight: 700,
-                          fontSize: 14,
-                        }}
-                      >
+
+                      {/* Email */}
+                      <TableCell sx={{ color: "#667eea", fontWeight: 700, fontSize: 14 }}>
                         {user.email}
                       </TableCell>
 
-                      {/* STATUS COLUMN */}
+                      {/* ── Status column: chip + Accept/Reject buttons for pending ── */}
                       <TableCell>
-                        <Chip
-                          label={isPending ? "Pending" : isApproved ? "Approved" : "Unknown"}
-                          color={isPending ? "warning" : isApproved ? "success" : "default"}
-                          size="small"
-                          sx={{
-                            fontWeight: 700,
-                            fontSize: 12,
-                            borderRadius: 1.5,
-                            height: 28,
-                            "& .MuiChip-label": { px: 1.5 },
-                          }}
-                        />
-                      </TableCell>
-
-                      {/* ACTION COLUMN (Only for APPROVED users) */}
-                      <TableCell>
-                        {isApproved && (
+                        <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap" gap={0.5}>
                           <Chip
-                            label={userAction === "ACTIVE" ? "Active" : "Inactive"}
-                            color={userAction === "ACTIVE" ? "success" : "default"}
+                            label={isPending ? "Pending" : isApproved ? "Approved" : "Unknown"}
+                            color={isPending ? "warning" : isApproved ? "success" : "default"}
                             size="small"
                             sx={{
                               fontWeight: 700,
@@ -470,24 +388,15 @@ const AdminDashboard = () => {
                               "& .MuiChip-label": { px: 1.5 },
                             }}
                           />
-                        )}
-                        {isPending && (
-                          <Typography variant="caption" sx={{ color: "#999" }}>
-                            —
-                          </Typography>
-                        )}
-                      </TableCell>
 
-                      {/* CONTROLS COLUMN */}
-                      <TableCell align="right">
-                        <Stack direction="row" spacing={0.8} justifyContent="flex-end">
-                          {isPending ? (
+                          {/* Accept / Reject — only for PENDING users */}
+                          {isPending && (
                             <>
                               <Tooltip title="Accept this user" arrow placement="top">
                                 <Button
                                   size="small"
                                   variant="contained"
-                                  disabled={confirmDialog.open && confirmLoading}
+                                  disabled={confirmLoading}
                                   onClick={() => openConfirmDialog(user.email, "status", "APPROVED")}
                                   sx={{
                                     background: "linear-gradient(135deg, #4caf50 0%, #45a049 100%)",
@@ -496,17 +405,14 @@ const AdminDashboard = () => {
                                     fontWeight: 700,
                                     borderRadius: 2,
                                     fontSize: 12,
-                                    padding: "8px 14px",
-                                    boxShadow: "0 4px 12px rgba(76, 175, 80, 0.3)",
-                                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                                    padding: "5px 10px",
+                                    minWidth: "unset",
+                                    boxShadow: "0 4px 12px rgba(76,175,80,0.3)",
                                     "&:hover": {
                                       background: "linear-gradient(135deg, #45a049 0%, #3d8b40 100%)",
-                                      boxShadow: "0 8px 20px rgba(76, 175, 80, 0.4)",
                                       transform: "translateY(-2px)",
                                     },
-                                    "&:disabled": {
-                                      opacity: 0.6,
-                                    },
+                                    "&:disabled": { opacity: 0.6 },
                                   }}
                                 >
                                   ✓ Accept
@@ -516,7 +422,7 @@ const AdminDashboard = () => {
                                 <Button
                                   size="small"
                                   variant="contained"
-                                  disabled={confirmDialog.open && confirmLoading}
+                                  disabled={confirmLoading}
                                   onClick={() => openConfirmDialog(user.email, "status", "REJECTED")}
                                   sx={{
                                     background: "linear-gradient(135deg, #f44336 0%, #da190b 100%)",
@@ -525,73 +431,76 @@ const AdminDashboard = () => {
                                     fontWeight: 700,
                                     borderRadius: 2,
                                     fontSize: 12,
-                                    padding: "8px 14px",
-                                    boxShadow: "0 4px 12px rgba(244, 67, 54, 0.3)",
-                                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                                    padding: "5px 10px",
+                                    minWidth: "unset",
+                                    boxShadow: "0 4px 12px rgba(244,67,54,0.3)",
                                     "&:hover": {
                                       background: "linear-gradient(135deg, #da190b 0%, #c41c04 100%)",
-                                      boxShadow: "0 8px 20px rgba(244, 67, 54, 0.4)",
                                       transform: "translateY(-2px)",
                                     },
-                                    "&:disabled": {
-                                      opacity: 0.6,
-                                    },
+                                    "&:disabled": { opacity: 0.6 },
                                   }}
                                 >
                                   ✕ Reject
                                 </Button>
                               </Tooltip>
                             </>
-                          ) : isApproved ? (
-                            <>
-                              <Tooltip 
-                                title={userAction === "ACTIVE" ? "Click to make Inactive" : "Click to make Active"} 
-                                arrow 
-                                placement="top"
-                              >
-                                <Button
-                                  size="small"
-                                  variant="contained"
-                                  disabled={confirmDialog.open && confirmLoading}
-                                  onClick={() =>
-                                    userAction === "ACTIVE"
-                                      ? openConfirmDialog(user.email, "action", "INACTIVE")
-                                      : openConfirmDialog(user.email, "action", "ACTIVE")
-                                  }
-                                  sx={{
-                                    background: userAction === "ACTIVE"
-                                      ? "linear-gradient(135deg, #4caf50 0%, #45a049 100%)"
-                                      : "linear-gradient(135deg, #9e9e9e 0%, #757575 100%)",
-                                    color: "#ffffff",
-                                    textTransform: "none",
-                                    fontWeight: 700,
-                                    borderRadius: 2,
-                                    fontSize: 12,
-                                    padding: "8px 14px",
-                                    boxShadow: userAction === "ACTIVE"
-                                      ? "0 4px 12px rgba(76, 175, 80, 0.3)"
-                                      : "0 4px 12px rgba(158, 158, 158, 0.3)",
-                                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                                    "&:hover": {
-                                      background: userAction === "ACTIVE"
-                                        ? "linear-gradient(135deg, #45a049 0%, #3d8b40 100%)"
-                                        : "linear-gradient(135deg, #757575 0%, #616161 100%)",
-                                      boxShadow: userAction === "ACTIVE"
-                                        ? "0 8px 20px rgba(76, 175, 80, 0.4)"
-                                        : "0 8px 20px rgba(158, 158, 158, 0.4)",
-                                      transform: "translateY(-2px)",
-                                    },
-                                    "&:disabled": {
-                                      opacity: 0.6,
-                                    },
-                                  }}
-                                >
-                                  {userAction === "ACTIVE" ? "● Active" : "● Inactive"}
-                                </Button>
-                              </Tooltip>
-                            </>
-                          ) : null}
+                          )}
                         </Stack>
+                      </TableCell>
+
+                      {/* ── Action column: Toggle Switch (APPROVED only) ── */}
+                      <TableCell>
+                        {isApproved ? (
+                          <Tooltip
+                            title={isActive ? "Click to Deactivate" : "Click to Activate"}
+                            arrow
+                            placement="top"
+                          >
+                            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                              <Switch
+                                checked={isActive}
+                                onChange={() =>
+                                  openConfirmDialog(
+                                    user.email,
+                                    "action",
+                                    isActive ? "INACTIVE" : "ACTIVE"
+                                  )
+                                }
+                                size="small"
+                                sx={{
+                                  /* thumb + track when ON (Active) */
+                                  "& .MuiSwitch-switchBase.Mui-checked": {
+                                    color: "#16a34a",
+                                  },
+                                  "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
+                                    backgroundColor: "#16a34a",
+                                    opacity: 1,
+                                  },
+                                  /* thumb + track when OFF (Inactive) */
+                                  "& .MuiSwitch-switchBase:not(.Mui-checked)": {
+                                    color: "#ef4444",
+                                  },
+                                  "& .MuiSwitch-switchBase:not(.Mui-checked) + .MuiSwitch-track": {
+                                    backgroundColor: "#fca5a5",
+                                    opacity: 1,
+                                  },
+                                }}
+                              />
+                              <Typography
+                                fontSize="13px"
+                                fontWeight={700}
+                                color={isActive ? "#16a34a" : "#ef4444"}
+                              >
+                                {isActive ? "Active" : "Inactive"}
+                              </Typography>
+                            </Box>
+                          </Tooltip>
+                        ) : (
+                          <Typography variant="caption" sx={{ color: "#bbb" }}>
+                            —
+                          </Typography>
+                        )}
                       </TableCell>
                     </TableRow>
                   );
@@ -601,21 +510,21 @@ const AdminDashboard = () => {
           </Table>
         </TableContainer>
 
-        {/* PAGINATION & RECORDS PER PAGE */}
+        {/* ── Pagination ── */}
         {filteredUsers.length > 0 && (
           <Box
             sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
               p: 2.5,
-              borderTop: '1px solid #e5e7eb',
-              backgroundColor: '#f9fafb',
-              flexWrap: 'wrap',
+              borderTop: "1px solid #e5e7eb",
+              backgroundColor: "#f9fafb",
+              flexWrap: "wrap",
               gap: 2,
             }}
           >
-            <Stack direction="row" spacing={2} alignItems="center" sx={{ flexWrap: 'wrap' }}>
+            <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap">
               <FormControl sx={{ minWidth: 150 }}>
                 <InputLabel sx={{ fontSize: 13, fontWeight: 600 }}>Records per page</InputLabel>
                 <Select
@@ -623,12 +532,7 @@ const AdminDashboard = () => {
                   onChange={handleRecordsPerPageChange}
                   label="Records per page"
                   size="small"
-                  sx={{
-                    borderRadius: 1.5,
-                    '& .MuiOutlinedInput-root': {
-                      borderColor: '#667eea',
-                    }
-                  }}
+                  sx={{ borderRadius: 1.5 }}
                 >
                   <MenuItem value={5}>5 records</MenuItem>
                   <MenuItem value={10}>10 records</MenuItem>
@@ -637,19 +541,10 @@ const AdminDashboard = () => {
                   <MenuItem value={filteredUsers.length}>All records</MenuItem>
                 </Select>
               </FormControl>
-
-              <Typography
-                variant="body2"
-                sx={{
-                  color: '#667eea',
-                  fontWeight: 600,
-                  fontSize: 13,
-                }}
-              >
-                {startIndex + 1}-{Math.min(endIndex, filteredUsers.length)} of {filteredUsers.length} users
+              <Typography variant="body2" sx={{ color: "#667eea", fontWeight: 600, fontSize: 13 }}>
+                {startIndex + 1}–{Math.min(endIndex, filteredUsers.length)} of {filteredUsers.length} users
               </Typography>
             </Stack>
-
             <Pagination
               count={totalPages}
               page={currentPage}
@@ -657,25 +552,20 @@ const AdminDashboard = () => {
               variant="outlined"
               shape="rounded"
               sx={{
-                '& .MuiPaginationItem-root': {
-                  borderColor: '#667eea',
-                  color: '#667eea',
+                "& .MuiPaginationItem-root": {
+                  borderColor: "#667eea",
+                  color: "#667eea",
                   fontWeight: 600,
-                  '&.Mui-selected': {
-                    backgroundColor: '#667eea',
-                    color: '#ffffff',
-                  },
-                  '&:hover': {
-                    backgroundColor: 'rgba(102, 126, 234, 0.08)',
-                  }
-                }
+                  "&.Mui-selected": { backgroundColor: "#667eea", color: "#ffffff" },
+                  "&:hover": { backgroundColor: "rgba(102,126,234,0.08)" },
+                },
               }}
             />
           </Box>
         )}
       </Paper>
 
-      {/* CONFIRMATION DIALOG */}
+      {/* ── Confirmation Dialog ── */}
       <Dialog
         open={confirmDialog.open}
         onClose={closeConfirmDialog}
@@ -683,110 +573,145 @@ const AdminDashboard = () => {
         fullWidth
         TransitionComponent={Transition}
         disableEscapeKeyDown={false}
-        onBackdropClick={closeConfirmDialog}
+        /* removed unsupported `onBackdropClick` prop; MUI will call
+           `onClose` with a reason of "backdropClick" when the user clicks
+           outside the dialog. */
         PaperProps={{
           sx: {
             borderRadius: 3,
-            boxShadow: "0 40px 100px rgba(2, 6, 23, 0.2)",
+            boxShadow: "0 40px 100px rgba(2,6,23,0.2)",
             backgroundColor: "rgba(255,255,255,0.98)",
             overflow: "hidden",
-            borderLeft: `6px solid ${
-              confirmDialog.actionValue === 'APPROVED' ? '#16a34a' : 
-              confirmDialog.actionValue === 'ACTIVE' ? '#16a34a' :
-              confirmDialog.actionValue === 'REJECTED' ? '#ef4444' : 
-              '#9e9e9e'
-            }`,
+            borderLeft: `6px solid ${dialogColor}`,
             backdropFilter: "blur(6px)",
           },
         }}
-        BackdropProps={{ sx: { backdropFilter: 'blur(4px)', backgroundColor: 'rgba(7,10,26,0.45)' } }}
+        BackdropProps={{
+          sx: { backdropFilter: "blur(4px)", backgroundColor: "rgba(7,10,26,0.45)" },
+        }}
         aria-labelledby="confirm-dialog-title"
         aria-describedby="confirm-dialog-description"
       >
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', p: 3 }}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", p: 3 }}>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
             <Avatar
               sx={{
-                bgcolor: confirmDialog.actionValue === 'APPROVED' ? '#16a34a' : 
-                         confirmDialog.actionValue === 'ACTIVE' ? '#16a34a' :
-                         confirmDialog.actionValue === 'REJECTED' ? '#ef4444' : 
-                         '#9e9e9e',
+                bgcolor: dialogColor,
                 width: 64,
                 height: 64,
                 mr: 2,
-                '@keyframes pulse': {
-                  '0%': { transform: 'scale(1)' },
-                  '50%': { transform: 'scale(1.07)' },
-                  '100%': { transform: 'scale(1)' },
+                "@keyframes pulse": {
+                  "0%": { transform: "scale(1)" },
+                  "50%": { transform: "scale(1.07)" },
+                  "100%": { transform: "scale(1)" },
                 },
-                animation: 'pulse 2.2s ease-in-out infinite',
+                animation: "pulse 2.2s ease-in-out infinite",
               }}
             >
-              {(confirmDialog.actionValue === 'APPROVED' || confirmDialog.actionValue === 'ACTIVE') ? (
-                <CheckCircleIcon sx={{ color: '#fff', fontSize: 28 }} />
+              {confirmDialog.actionValue === "APPROVED" ||
+              confirmDialog.actionValue === "ACTIVE" ? (
+                <CheckCircleIcon sx={{ color: "#fff", fontSize: 28 }} />
               ) : (
-                <CancelIcon sx={{ color: '#fff', fontSize: 28 }} />
+                <CancelIcon sx={{ color: "#fff", fontSize: 28 }} />
               )}
             </Avatar>
-
             <Box>
-              <Typography id="confirm-dialog-title" sx={{ fontWeight: 900, fontSize: 20, color: '#0f172a' }}>
-                {confirmDialog.actionValue === 'APPROVED' ? 'Accept User' : 
-                 confirmDialog.actionValue === 'ACTIVE' ? 'Make Active' :
-                 confirmDialog.actionValue === 'REJECTED' ? 'Reject User' : 
-                 'Make Inactive'}
+              <Typography
+                id="confirm-dialog-title"
+                sx={{ fontWeight: 900, fontSize: 20, color: "#0f172a" }}
+              >
+                {confirmDialog.actionValue === "APPROVED"
+                  ? "Accept User"
+                  : confirmDialog.actionValue === "ACTIVE"
+                  ? "Make Active"
+                  : confirmDialog.actionValue === "REJECTED"
+                  ? "Reject User"
+                  : "Make Inactive"}
               </Typography>
-              <Typography variant="body2" sx={{ color: '#64748b', mt: 0.5 }}>
-                {confirmDialog.actionValue === 'APPROVED'
-                  ? 'This user will be accepted and set to Active.'
-                  : confirmDialog.actionValue === 'ACTIVE'
-                  ? 'This user will be activated and can login.'
-                  : confirmDialog.actionValue === 'REJECTED'
-                  ? 'This user will be rejected and completely removed from the list.'
-                  : 'This user will be deactivated and cannot login.'}
+              <Typography variant="body2" sx={{ color: "#64748b", mt: 0.5 }}>
+                {confirmDialog.actionValue === "APPROVED"
+                  ? "This user will be accepted and set to Active."
+                  : confirmDialog.actionValue === "ACTIVE"
+                  ? "This user will be activated and can login."
+                  : confirmDialog.actionValue === "REJECTED"
+                  ? "This user will be rejected and removed from the list."
+                  : "This user will be deactivated and cannot login."}
               </Typography>
             </Box>
           </Box>
-
-          <IconButton onClick={closeConfirmDialog} size="small" aria-label="close" sx={{ bgcolor: '#fff', boxShadow: '0 4px 16px rgba(15,23,42,0.06)' }}>
-            <CloseIcon sx={{ color: '#475569' }} />
+          <IconButton
+            onClick={closeConfirmDialog}
+            size="small"
+            aria-label="close"
+            sx={{ bgcolor: "#fff", boxShadow: "0 4px 16px rgba(15,23,42,0.06)" }}
+          >
+            <CloseIcon sx={{ color: "#475569" }} />
           </IconButton>
         </Box>
 
-        <DialogContent sx={{ pt: 2, pb: 2, backgroundColor: '#ffffff' }}>
-          <Typography id="confirm-dialog-description" variant="h6" sx={{ mb: 1, color: '#0f172a', fontWeight: 700 }}>
-            Are you sure you want to{' '}
+        <DialogContent sx={{ pt: 2, pb: 2, backgroundColor: "#ffffff" }}>
+          <Typography
+            id="confirm-dialog-description"
+            variant="h6"
+            sx={{ mb: 1, color: "#0f172a", fontWeight: 700 }}
+          >
+            Are you sure you want to{" "}
             <strong>
-              {confirmDialog.actionValue === 'APPROVED' ? 'accept' : 
-               confirmDialog.actionValue === 'ACTIVE' ? 'activate' :
-               confirmDialog.actionValue === 'REJECTED' ? 'reject' : 
-               'deactivate'}
-            </strong>{' '}
+              {confirmDialog.actionValue === "APPROVED"
+                ? "accept"
+                : confirmDialog.actionValue === "ACTIVE"
+                ? "activate"
+                : confirmDialog.actionValue === "REJECTED"
+                ? "reject"
+                : "deactivate"}
+            </strong>{" "}
             this user?
           </Typography>
 
-          <Paper variant="outlined" sx={{ p: 2, background: 'linear-gradient(180deg,#f8fafc,#ffffff)', borderRadius: 2, mb: 1 }}>
-            <Typography variant="overline" sx={{ color: '#0f172a', fontWeight: 800 }}>User Details</Typography>
-            <Typography variant="body1" sx={{ color: '#334155', fontWeight: 800, mt: 1 }}>
-              {confirmDialog.email || '—'}
+          <Paper
+            variant="outlined"
+            sx={{
+              p: 2,
+              background: "linear-gradient(180deg,#f8fafc,#ffffff)",
+              borderRadius: 2,
+              mb: 1,
+            }}
+          >
+            <Typography variant="overline" sx={{ color: "#0f172a", fontWeight: 800 }}>
+              User Details
             </Typography>
-            <Typography variant="body2" sx={{ color: '#64748b', mt: 1 }}>
-              Department: <strong>{filteredUsers.find(u => u.email === confirmDialog.email)?.department || '—'}</strong>
+            <Typography variant="body1" sx={{ color: "#334155", fontWeight: 800, mt: 1 }}>
+              {confirmDialog.email || "—"}
             </Typography>
-            <Typography variant="body2" sx={{ color: '#64748b' }}>
-              Year: <strong>{filteredUsers.find(u => u.email === confirmDialog.email)?.year_of_passout || '—'}</strong>
+            <Typography variant="body2" sx={{ color: "#64748b", mt: 1 }}>
+              Department:{" "}
+              <strong>
+                {filteredUsers.find((u) => u.email === confirmDialog.email)?.department || "—"}
+              </strong>
+            </Typography>
+            <Typography variant="body2" sx={{ color: "#64748b" }}>
+              Year:{" "}
+              <strong>
+                {filteredUsers.find((u) => u.email === confirmDialog.email)?.year_of_passout || "—"}
+              </strong>
             </Typography>
             <Divider sx={{ my: 1 }} />
-            <Typography variant="body2" sx={{ color: '#64748b' }}>
-              {confirmDialog.actionValue === 'REJECTED' 
-                ? '⚠️ This action cannot be undone. The user will be permanently removed from the system.'
-                : '✓ You can change this status anytime.'}
+            <Typography variant="body2" sx={{ color: "#64748b" }}>
+              {confirmDialog.actionValue === "REJECTED"
+                ? "⚠️ This action cannot be undone. The user will be permanently removed."
+                : "✓ You can change this status anytime."}
             </Typography>
           </Paper>
         </DialogContent>
 
-        <DialogActions sx={{ p: 2.5, borderTop: '1px solid #f1f5f9', backgroundColor: '#ffffff' }}>
-          <Button onClick={closeConfirmDialog} variant="outlined" sx={{ mr: 1, textTransform: 'none', fontWeight: 800 }}>
+        <DialogActions
+          sx={{ p: 2.5, borderTop: "1px solid #f1f5f9", backgroundColor: "#ffffff" }}
+        >
+          <Button
+            onClick={closeConfirmDialog}
+            variant="outlined"
+            sx={{ mr: 1, textTransform: "none", fontWeight: 800 }}
+          >
             Cancel
           </Button>
           <Button
@@ -794,60 +719,54 @@ const AdminDashboard = () => {
             variant="contained"
             disabled={confirmLoading}
             sx={{
-              background: confirmDialog.actionValue === 'APPROVED' ? '#16a34a' : 
-                          confirmDialog.actionValue === 'ACTIVE' ? '#16a34a' :
-                          confirmDialog.actionValue === 'REJECTED' ? '#ef4444' : 
-                          '#9e9e9e',
-              color: '#ffffff',
+              background: dialogColor,
+              color: "#ffffff",
               fontWeight: 900,
-              textTransform: 'none',
+              textTransform: "none",
               borderRadius: 2,
               px: 3,
-              boxShadow: (theme) => `0 14px 40px ${
-                confirmDialog.actionValue === 'APPROVED' ? '#16a34a' : 
-                confirmDialog.actionValue === 'ACTIVE' ? '#16a34a' :
-                confirmDialog.actionValue === 'REJECTED' ? '#ef4444' : 
-                '#9e9e9e'
-              }33`,
-              '&:hover': { 
-                transform: 'translateY(-3px)', 
-                boxShadow: (theme) => `0 18px 46px ${
-                  confirmDialog.actionValue === 'APPROVED' ? '#16a34a' : 
-                  confirmDialog.actionValue === 'ACTIVE' ? '#16a34a' :
-                  confirmDialog.actionValue === 'REJECTED' ? '#ef4444' : 
-                  '#9e9e9e'
-                }44` 
+              boxShadow: `0 14px 40px ${dialogColor}33`,
+              "&:hover": {
+                transform: "translateY(-3px)",
+                boxShadow: `0 18px 46px ${dialogColor}44`,
               },
-              '&:disabled': { opacity: 0.6 },
+              "&:disabled": { opacity: 0.6 },
             }}
             startIcon={
-              (confirmDialog.actionValue === 'APPROVED' || confirmDialog.actionValue === 'ACTIVE') ? <CheckCircleIcon /> : 
-              <CancelIcon />
+              confirmDialog.actionValue === "APPROVED" ||
+              confirmDialog.actionValue === "ACTIVE" ? (
+                <CheckCircleIcon />
+              ) : (
+                <CancelIcon />
+              )
             }
           >
             {confirmLoading ? (
-              <CircularProgress size={20} sx={{ color: '#fff' }} />
+              <CircularProgress size={20} sx={{ color: "#fff" }} />
+            ) : confirmDialog.actionValue === "APPROVED" ? (
+              "Accept"
+            ) : confirmDialog.actionValue === "ACTIVE" ? (
+              "Activate"
+            ) : confirmDialog.actionValue === "REJECTED" ? (
+              "Reject"
             ) : (
-              confirmDialog.actionValue === 'APPROVED' ? 'Accept' : 
-              confirmDialog.actionValue === 'ACTIVE' ? 'Activate' :
-              confirmDialog.actionValue === 'REJECTED' ? 'Reject' : 
-              'Deactivate'
+              "Deactivate"
             )}
           </Button>
         </DialogActions>
       </Dialog>
 
-      {/* SUCCESS/ERROR SNACKBAR */}
-      <Snackbar 
-        open={snackbar.open} 
-        autoHideDuration={4000} 
-        onClose={() => setSnackbar(s => ({...s, open:false}))} 
-        anchorOrigin={{vertical:'bottom', horizontal:'right'}}
+      {/* ── Snackbar ── */}
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={4000}
+        onClose={() => setSnackbar((s) => ({ ...s, open: false }))}
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
       >
-        <Alert 
-          onClose={() => setSnackbar(s => ({...s, open:false}))} 
-          severity={snackbar.severity} 
-          sx={{ width: '100%' }}
+        <Alert
+          onClose={() => setSnackbar((s) => ({ ...s, open: false }))}
+          severity={snackbar.severity}
+          sx={{ width: "100%" }}
         >
           {snackbar.message}
         </Alert>

@@ -93,8 +93,12 @@ VITE_API_BASE_URL=http://localhost:5000
 
 #### Admin
 - **GET /admin/users** - Get all users
-- **PUT /admin/update-status** - Approve/Reject user (userId, status: APPROVED/REJECTED)
-
+- **PUT /admin/update-status** - Modify a user's state. Accepts JSON
+  payload with `email` plus one of:
+  - `status` (APPROVED/REJECTED) to move a pending account through approval
+  - `action` (ACTIVE/INACTIVE) to toggle an approved account's active state
+  The server will return 400 if neither field is provided or if the
+  transition is invalid.
 ### 4. Frontend Workflow
 
 **Login Page:**

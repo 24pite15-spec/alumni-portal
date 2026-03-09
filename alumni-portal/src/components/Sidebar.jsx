@@ -33,7 +33,7 @@ const Sidebar = () => {
     { text: "Events", icon: <EventOutlinedIcon />, path: "/events" },
     // only show About Me to non-admin users
     ...(!isAdmin ? [{ text: "About Me", icon: <PersonOutlineIcon />, path: "/about-me" }] : []),
-    ...(isAdmin ? [{ text: "Admin Dashboard", icon: <AdminPanelSettingsIcon />, path: "/admin" }] : []),
+    ...(isAdmin ? [{ text: "User Management", icon: <AdminPanelSettingsIcon />, path: "/admin" }] : []),
   ];
 
   const handleLogoutClick = (event) => {
