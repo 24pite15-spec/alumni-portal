@@ -699,7 +699,8 @@ app.post("/posts/create", (req, res) => {
 
 /* GET ALL POSTS (with user info) */
 app.get("/posts", (req, res) => {
-	const sql = `
+	const { date } = req.query || {};
+	let sql = `
 		SELECT 
 			p.post_id,
 			p.user_id,
@@ -712,10 +713,16 @@ app.get("/posts", (req, res) => {
 			u.profile_photo
 		FROM posts p
 		JOIN alumni_users u ON p.user_id = u.user_id
-		ORDER BY p.created_at DESC
 	`;
+	const params = [];
+	if (date) {
+		// filter by exact date string (YYYY-MM-DD)
+		sql += " WHERE DATE(p.created_at) = ?";
+		params.push(date);
+	}
+	sql += " ORDER BY p.created_at DESC";
 
-	db.query(sql, (err, results) => {
+	db.query(sql, params, (err, results) => {
 		if (err) {
 			console.error("❌ Error fetching posts:", err);
 			return res.status(500).json({ message: "Database error", error: err.message });

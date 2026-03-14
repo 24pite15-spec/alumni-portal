@@ -62,7 +62,15 @@ Create a new post
 ---
 
 #### **GET /posts**
-Fetch all posts (ordered by newest first)
+Fetch all posts (ordered by newest first).
+
+You can optionally provide a `date` query parameter (`YYYY-MM-DD`) to
+return only posts created on that date.  Future dates are allowed but will
+simply yield an empty array.
+
+**Examples:**
+- `/posts` – fetch everything
+- `/posts?date=2025-03-09` – fetch posts from March 9, 2025 only
 
 **Response:**
 ```json

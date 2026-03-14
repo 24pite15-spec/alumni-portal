@@ -21,7 +21,6 @@ export const authAPI = {
       throw new Error(`Invalid JSON from server (status ${res.status})`);
     }
     if (!res.ok) {
-      // If backend provided a message, use it; otherwise fall back to status text.
       throw new Error(data.message || `Login failed with status ${res.status}`);
     }
     return data;
@@ -82,14 +81,27 @@ export const postsAPI = {
     });
     const data = await res.json();
     if (!res.ok) {
-      // bubble up backend message if available
       throw new Error(data.message || `Post creation failed: ${res.status}`);
     }
     return data;
   },
 
-  list: () =>
-    fetch(`${API_BASE_URL}/posts`, { method: "GET" }).then((res) => res.json()),
+  // ✅ FIXED: accepts startDate and endDate (YYYY-MM-DD strings).
+  // Sends ?startDate=...&endDate=... to the backend.
+  // Both params are optional — omit both to retrieve all posts.
+  list: async (startDate, endDate) => {
+    const params = new URLSearchParams();
+    if (startDate) params.append("startDate", startDate);
+    if (endDate)   params.append("endDate",   endDate);
+
+    const query = params.toString();
+    const url = `${API_BASE_URL}/posts${query ? `?${query}` : ""}`;
+
+    const res = await fetch(url, { method: "GET" });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || `Failed to list posts: ${res.status}`);
+    return data;
+  },
 
   listByUser: (userId) =>
     fetch(`${API_BASE_URL}/posts/user/${userId}`, { method: "GET" }).then((res) => res.json()),
@@ -129,14 +141,7 @@ export const adminAPI = {
     return res.json();
   },
 
-  // `status` is used when approving/rejecting a PENDING user.  `action`
-  // toggles ACTIVE/INACTIVE for already-approved accounts.  The backend
-  // handler accepts either field (or both) and validates them, so we build a
-  // payload accordingly.
   updateUserStatus: async (email, status = undefined, action = undefined) => {
-    // build body with only the properties that are defined; avoids sending
-    // `{status: undefined}` which some servers might treat as a deliberate
-    // null value.
     const payload = { email };
     if (status !== undefined) payload.status = status;
     if (action !== undefined) payload.action = action;
@@ -234,7 +239,6 @@ export const setStoredUser = (user) => {
     } else {
       localStorage.setItem("user", JSON.stringify(user));
     }
-    // notify listeners in the same window/tab
     window.dispatchEvent(new CustomEvent('userUpdated', { detail: user }));
   } catch (error) {
     console.error("Error writing stored user:", error);

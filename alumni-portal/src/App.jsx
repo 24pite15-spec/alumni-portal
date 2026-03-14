@@ -9,7 +9,7 @@ import AlumniDetails from "./pages/Home/AlumniDetails";
 import AboutMe from "./pages/Home/AboutMe";
 import Job from "./pages/Home/Job"; // 👈 ADD THIS
 import Events from "./pages/Home/Events";
-
+import AdminReports from "./pages/Admin/AdminReports";
 import { getStoredUser } from "./api/config";
 // the enhanced dashboard contains improved styling, a dedicated
 // pending colour and is the version we will use going forward.
@@ -103,7 +103,19 @@ function App() {
           </MainLayout>
         }
       />
-
+      <Route
+        path="/admin/reports"
+        element={
+          <MainLayout>
+            {getStoredUser()?.role === "admin" ? (
+              <AdminReports />
+            ) : (
+              <Navigate to="/home" replace />
+            )}
+          </MainLayout>
+        }
+      />
+      <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );

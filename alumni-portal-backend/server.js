@@ -79,10 +79,47 @@ db.getConnection((err, connection) => {
 				console.error("Error ensuring home_feed_posts table:", err2);
 			} else {
 				console.log("✅ home_feed_posts table ready");
+
+				// ── Migrate: add is_hidden column if it doesn't exist ──
+				connection.query("SHOW COLUMNS FROM home_feed_posts LIKE 'is_hidden'", (ehErr, ehCols) => {
+					if (!ehErr && ehCols.length === 0) {
+						connection.query(
+							"ALTER TABLE home_feed_posts ADD COLUMN is_hidden TINYINT(1) DEFAULT 0",
+							(alterErr) => {
+								if (alterErr) console.warn("Could not add is_hidden column:", alterErr.message);
+								else console.log("✅ is_hidden column added to home_feed_posts");
+							}
+						);
+					} else if (!ehErr) {
+						console.log("✅ is_hidden column already exists");
+					}
+				});
 			}
 		});
 
-		// ensure events table exists
+		// ensure post_reports table exists
+		const createReportsSql = `
+		CREATE TABLE IF NOT EXISTS post_reports (
+		  id INT AUTO_INCREMENT PRIMARY KEY,
+		  post_id INT NOT NULL,
+		  user_id INT NOT NULL,
+		  reported_reason VARCHAR(255),
+		  reported_date DATE,
+		  reported_time TIME,
+		  status VARCHAR(50) DEFAULT 'PENDING',
+		  INDEX (post_id),
+		  INDEX (user_id)
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+		`;
+		connection.query(createReportsSql, (errR) => {
+			if (errR) {
+				console.error("Error ensuring post_reports table:", errR);
+			} else {
+				console.log("✅ post_reports table ready");
+			}
+		});
+
+		// ensure events table exists (with posted_by columns)
 		const createEventsSql = `
 		CREATE TABLE IF NOT EXISTS events (
 		  id INT AUTO_INCREMENT PRIMARY KEY,
@@ -97,6 +134,8 @@ db.getConnection((err, connection) => {
 		  organizer_email VARCHAR(255),
 		  invitation_image TEXT,
 		  fee DECIMAL(10,2),
+		  posted_by_user_id INT DEFAULT NULL,
+		  posted_by_name VARCHAR(255) DEFAULT NULL,
 		  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 		  INDEX (event_date)
 		) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -106,6 +145,28 @@ db.getConnection((err, connection) => {
 				console.error("Error ensuring events table:", err3);
 			} else {
 				console.log("✅ events table ready");
+
+				// ── Migrate: add posted_by columns if table already existed without them ──
+				// Using SHOW COLUMNS instead of IF NOT EXISTS — not supported in MySQL < 8
+				connection.query("SHOW COLUMNS FROM events LIKE 'posted_by_user_id'", (err4, cols) => {
+					if (err4) {
+						console.warn("Could not check events columns:", err4.message);
+						return;
+					}
+					if (cols.length === 0) {
+						connection.query(
+							`ALTER TABLE events
+							 ADD COLUMN posted_by_user_id INT DEFAULT NULL,
+							 ADD COLUMN posted_by_name VARCHAR(255) DEFAULT NULL`,
+							(err5) => {
+								if (err5) console.warn("Note on ALTER events:", err5.message);
+								else console.log("✅ events posted_by columns added");
+							}
+						);
+					} else {
+						console.log("✅ events posted_by columns already exist");
+					}
+				});
 			}
 		});
 
@@ -361,8 +422,8 @@ app.put("/admin/update-status", (req, res) => {
 			// Cannot change status for already approved users
 			else if (currentStatus === "APPROVED") {
 				console.error(`❌ Cannot change status for APPROVED user`);
-				return res.status(400).json({ 
-					message: "Cannot change status once account is approved. Use action column to toggle Active/Inactive." 
+				return res.status(400).json({
+					message: "Cannot change status once account is approved. Use action column to toggle Active/Inactive."
 				});
 			}
 			else {
@@ -381,8 +442,8 @@ app.put("/admin/update-status", (req, res) => {
 
 			if (currentStatus !== "APPROVED") {
 				console.error(`❌ Cannot change action for non-APPROVED user. Current status: ${currentStatus}`);
-				return res.status(400).json({ 
-					message: "Can only change action for APPROVED users" 
+				return res.status(400).json({
+					message: "Can only change action for APPROVED users"
 				});
 			}
 
@@ -392,8 +453,8 @@ app.put("/admin/update-status", (req, res) => {
 				updateValues.push(upperAction);
 			} else {
 				console.error(`❌ Invalid action value: ${action}`);
-				return res.status(400).json({ 
-					message: "Invalid action. Use ACTIVE or INACTIVE" 
+				return res.status(400).json({
+					message: "Invalid action. Use ACTIVE or INACTIVE"
 				});
 			}
 		}
@@ -414,14 +475,14 @@ app.put("/admin/update-status", (req, res) => {
 		db.query(updateSql, updateValues, (err2) => {
 			if (err2) {
 				console.error("Error updating user:", err2);
-				return res.status(500).json({ 
-					message: "Database error", 
-					error: err2.message 
+				return res.status(500).json({
+					message: "Database error",
+					error: err2.message
 				});
 			}
 
 			console.log(`✅ Successfully updated user: ${email}`);
-			return res.status(200).json({ 
+			return res.status(200).json({
 				message: "User updated successfully",
 				updatedFields: updateFields,
 				updatedValues: updateValues.slice(0, -1) // exclude email
@@ -835,6 +896,7 @@ app.post("/posts/upload-image", (req, res, next) => {
 	});
 });
 
+// ── POST /events ──────────────────────────────────────────────────────────
 app.post("/events", (req, res) => {
 	const {
 		event_name,
@@ -848,6 +910,8 @@ app.post("/events", (req, res) => {
 		organizer_email,
 		invitation_image,
 		fee,
+		posted_by_user_id,
+		posted_by_name,
 	} = req.body;
 
 	if (
@@ -874,11 +938,13 @@ app.post("/events", (req, res) => {
 			organizer_email,
 			invitation_image,
 			fee,
+			posted_by_user_id,
+			posted_by_name,
 			created_at
-		) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())
+		) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())
 	`;
 
-	console.log("Creating event with invitation_image:", invitation_image);
+	console.log("Creating event — posted_by_user_id:", posted_by_user_id, "posted_by_name:", posted_by_name);
 
 	db.query(
 		sql,
@@ -894,6 +960,8 @@ app.post("/events", (req, res) => {
 			organizer_email || null,
 			invitation_image || null,
 			fee != null ? fee : null,
+			posted_by_user_id || null,
+			posted_by_name || null,
 		],
 		(err, result) => {
 			if (err) {
@@ -913,6 +981,8 @@ app.post("/events", (req, res) => {
 				organizer_email: organizer_email || null,
 				invitation_image: invitation_image || null,
 				fee: fee != null ? Number(fee) : null,
+				posted_by_user_id: posted_by_user_id || null,
+				posted_by_name: posted_by_name || null,
 				created_at: new Date(),
 			};
 			res.status(201).json(newEvent);
@@ -920,6 +990,7 @@ app.post("/events", (req, res) => {
 	);
 });
 
+// ── GET /api/events ───────────────────────────────────────────────────────
 app.get("/api/events", (req, res) => {
 	const sql = "SELECT * FROM events ORDER BY event_date DESC, event_time DESC";
 	db.query(sql, (err, results) => {
@@ -945,6 +1016,7 @@ app.post("/api/events/upload-image", (req, res, next) => {
 	});
 });
 
+// ── POST /api/events ──────────────────────────────────────────────────────
 app.post("/api/events", (req, res) => {
 	const {
 		event_name,
@@ -958,7 +1030,10 @@ app.post("/api/events", (req, res) => {
 		organizer_email,
 		invitation_image,
 		fee,
+		posted_by_user_id,
+		posted_by_name,
 	} = req.body;
+
 	if (
 		!event_name ||
 		!event_description ||
@@ -969,7 +1044,9 @@ app.post("/api/events", (req, res) => {
 	) {
 		return res.status(400).json({ success: false, message: "Missing required fields" });
 	}
-	console.log("Creating event with invitation_image (api):", invitation_image);
+
+	console.log("Creating event (api) — posted_by_user_id:", posted_by_user_id, "posted_by_name:", posted_by_name);
+
 	const sql = `
 		INSERT INTO events (
 			event_name,
@@ -983,9 +1060,12 @@ app.post("/api/events", (req, res) => {
 			organizer_email,
 			invitation_image,
 			fee,
+			posted_by_user_id,
+			posted_by_name,
 			created_at
-		) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())
+		) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())
 	`;
+
 	db.query(
 		sql,
 		[
@@ -1000,6 +1080,8 @@ app.post("/api/events", (req, res) => {
 			organizer_email || null,
 			invitation_image || null,
 			fee != null ? fee : null,
+			posted_by_user_id || null,
+			posted_by_name || null,
 		],
 		(err, result) => {
 			if (err) {
@@ -1019,6 +1101,8 @@ app.post("/api/events", (req, res) => {
 				organizer_email: organizer_email || null,
 				invitation_image: invitation_image || null,
 				fee: fee != null ? Number(fee) : null,
+				posted_by_user_id: posted_by_user_id || null,
+				posted_by_name: posted_by_name || null,
 				created_at: new Date(),
 			};
 			res.status(201).json(newEvent);
@@ -1097,7 +1181,7 @@ app.post("/job-posts", handleCreateJob);
 
 const handleFetchJobs = (req, res) => {
 	const sql = `SELECT * FROM job_seeker_posts ORDER BY created_at DESC`;
-	
+
 	db.query(sql, (err, results) => {
 		if (err) {
 			console.error("Job fetch error:", err);
@@ -1116,7 +1200,7 @@ const handleFetchJobsByUser = (req, res) => {
 		return res.status(400).json({ message: "User ID required" });
 	}
 	const sql = `SELECT * FROM job_seeker_posts WHERE user_id = ? ORDER BY created_at DESC`;
-	
+
 	db.query(sql, [userId], (err, results) => {
 		if (err) {
 			console.error("Job fetch by user error:", err);
@@ -1130,9 +1214,20 @@ app.get("/jobs/user/:userId", handleFetchJobsByUser);
 app.get("/job-posts/user/:userId", handleFetchJobsByUser);
 
 
+/* ============================
+   POSTS — list with date range
+   Supports:
+     ?date=YYYY-MM-DD          (single day, backward-compatible)
+     ?startDate=YYYY-MM-DD     (from date, inclusive)
+     ?endDate=YYYY-MM-DD       (to date, inclusive)
+     ?startDate=...&endDate=.. (range, both inclusive)
+============================ */
 app.get("/posts", (req, res) => {
-	console.log("/posts listing requested");
-	const sql = `
+	console.log("/posts listing requested, query:", req.query);
+
+	const { date, startDate, endDate } = req.query || {};
+
+	let sql = `
 		SELECT 
 			hfp.post_id,
 			hfp.user_id,
@@ -1140,15 +1235,40 @@ app.get("/posts", (req, res) => {
 			hfp.image_link AS image_url,
 			hfp.post_description,
 			hfp.created_at,
-			au.full_name as name,
-			au.year_of_passout as year,
-			au.profile_photo as profile_photo
+			au.full_name  AS name,
+			au.year_of_passout AS year,
+			au.profile_photo   AS profile_photo
 		FROM home_feed_posts hfp
 		LEFT JOIN alumni_users au ON hfp.user_id = au.user_id
-		ORDER BY hfp.created_at DESC
+		WHERE hfp.is_hidden = 0
 	`;
 
-	db.query(sql, (err, results) => {
+	const params = [];
+	const conditions = [];
+
+	// ── backward-compatible single-date filter ──
+	if (date) {
+		conditions.push("DATE(hfp.created_at) = ?");
+		params.push(date);
+	} else {
+		// ── date range filters ──
+		if (startDate) {
+			conditions.push("DATE(hfp.created_at) >= ?");
+			params.push(startDate);
+		}
+		if (endDate) {
+			conditions.push("DATE(hfp.created_at) <= ?");
+			params.push(endDate);
+		}
+	}
+
+	if (conditions.length > 0) {
+		sql += " AND " + conditions.join(" AND ");
+	}
+
+	sql += " ORDER BY hfp.created_at DESC";
+
+	db.query(sql, params, (err, results) => {
 		if (err) {
 			console.error("Error fetching posts:", err);
 			return res.status(500).json({ success: false, message: "Database error", error: err.message });
@@ -1174,7 +1294,7 @@ app.post("/posts/create", (req, res) => {
 	}
 
 	const textContent = postDescription || postText;
-	
+
 	if (!textContent && !imageUrl && !postImagePath) {
 		return res.status(400).json({ success: false, message: "Post must contain text or an image/link" });
 	}
@@ -1215,6 +1335,157 @@ app.post("/posts/create", (req, res) => {
 	});
 });
 
+/* ============================
+   POST REPORTS
+============================ */
+
+// ── Submit a report ───────────────────────────────────────────────────────
+app.post("/posts/report", (req, res) => {
+	const { postId, userId, reportedReason } = req.body || {};
+
+	if (!postId || !userId || !reportedReason) {
+		return res.status(400).json({ message: "postId, userId, and reportedReason are required" });
+	}
+
+	// Prevent duplicate reports from the same user on the same post
+	db.query(
+		"SELECT id FROM post_reports WHERE post_id = ? AND user_id = ?",
+		[postId, userId],
+		(err, rows) => {
+			if (err) {
+				console.error("Report check error:", err);
+				return res.status(500).json({ message: "Database error", error: err.message });
+			}
+
+			if (rows.length > 0) {
+				return res.status(409).json({ message: "You have already reported this post." });
+			}
+
+			const now = new Date();
+			const reportedDate = now.toISOString().split("T")[0];      // YYYY-MM-DD
+			const reportedTime = now.toTimeString().split(" ")[0];     // HH:MM:SS
+
+			db.query(
+				`INSERT INTO post_reports (post_id, user_id, reported_reason, reported_date, reported_time, status)
+				 VALUES (?, ?, ?, ?, ?, 'PENDING')`,
+				[postId, userId, reportedReason, reportedDate, reportedTime],
+				(err2, result) => {
+					if (err2) {
+						console.error("Report insert error:", err2);
+						return res.status(500).json({ message: "Database error", error: err2.message });
+					}
+					console.log(`📋 Post ${postId} reported by user ${userId} — reason: ${reportedReason}`);
+					return res.status(201).json({
+						message: "Report submitted successfully",
+						reportId: result.insertId,
+					});
+				}
+			);
+		}
+	);
+});
+
+// ── Admin: get all reports with post content + reporter name + post author + is_hidden ──
+app.get("/admin/reports", (req, res) => {
+	const sql = `
+		SELECT 
+			pr.id,
+			pr.post_id,
+			pr.user_id,
+			pr.reported_reason,
+			pr.reported_date,
+			pr.reported_time,
+			pr.status,
+			hfp.post_description,
+			hfp.post_image_path,
+			hfp.image_link AS image_url,
+			hfp.is_hidden,
+			au.full_name AS reported_by,
+			poster.full_name AS post_author
+		FROM post_reports pr
+		LEFT JOIN home_feed_posts hfp ON pr.post_id = hfp.post_id
+		LEFT JOIN alumni_users au ON pr.user_id = au.user_id
+		LEFT JOIN alumni_users poster ON hfp.user_id = poster.user_id
+		ORDER BY pr.reported_date DESC, pr.reported_time DESC
+	`;
+	db.query(sql, (err, results) => {
+		if (err) {
+			console.error("Reports fetch error:", err);
+			return res.status(500).json({ message: "Database error", error: err.message });
+		}
+		res.json(results);
+	});
+});
+
+// ── Admin: pending report count (for notification badge) ─────────────────
+app.get("/admin/reports/count", (req, res) => {
+	db.query("SELECT COUNT(*) AS count FROM post_reports WHERE status = 'PENDING'", (err, results) => {
+		if (err) {
+			console.error("Report count error:", err);
+			return res.status(500).json({ message: "Database error", error: err.message });
+		}
+		res.json({ count: results[0].count });
+	});
+});
+
+// ── Admin: hide a post + resolve all its reports ──────────────────────────
+app.put("/admin/posts/:postId/hide", (req, res) => {
+	const postId = req.params.postId;
+	if (!postId) return res.status(400).json({ message: "postId required" });
+
+	db.query("UPDATE home_feed_posts SET is_hidden = 1 WHERE post_id = ?", [postId], (err, result) => {
+		if (err) {
+			console.error("Post hide error:", err);
+			return res.status(500).json({ message: "Database error", error: err.message });
+		}
+		if (result.affectedRows === 0) return res.status(404).json({ message: "Post not found" });
+
+		// Mark all reports for this post as RESOLVED
+		db.query("UPDATE post_reports SET status = 'RESOLVED' WHERE post_id = ?", [postId], (err2) => {
+			if (err2) console.warn("Could not resolve reports:", err2.message);
+		});
+
+		console.log(`🚫 Post ${postId} hidden by admin`);
+		res.status(200).json({ message: "Post hidden successfully", postId });
+	});
+});
+
+// ── Admin: unhide a post ──────────────────────────────────────────────────
+app.put("/admin/posts/:postId/unhide", (req, res) => {
+	const postId = req.params.postId;
+	if (!postId) return res.status(400).json({ message: "postId required" });
+
+	db.query("UPDATE home_feed_posts SET is_hidden = 0 WHERE post_id = ?", [postId], (err, result) => {
+		if (err) {
+			console.error("Post unhide error:", err);
+			return res.status(500).json({ message: "Database error", error: err.message });
+		}
+		if (result.affectedRows === 0) return res.status(404).json({ message: "Post not found" });
+
+		// Reopen resolved reports for this post back to PENDING
+		db.query(
+			"UPDATE post_reports SET status = 'PENDING' WHERE post_id = ? AND status = 'RESOLVED'",
+			[postId],
+			(err2) => { if (err2) console.warn("Could not reopen reports:", err2.message); }
+		);
+
+		console.log(`✅ Post ${postId} unhidden by admin`);
+		res.status(200).json({ message: "Post unhidden successfully", postId });
+	});
+});
+
+// ── Admin: dismiss a single report (no action on the post) ────────────────
+app.put("/admin/reports/:reportId/dismiss", (req, res) => {
+	const reportId = req.params.reportId;
+	db.query("UPDATE post_reports SET status = 'DISMISSED' WHERE id = ?", [reportId], (err, result) => {
+		if (err) {
+			console.error("Report dismiss error:", err);
+			return res.status(500).json({ message: "Database error", error: err.message });
+		}
+		if (result.affectedRows === 0) return res.status(404).json({ message: "Report not found" });
+		res.status(200).json({ message: "Report dismissed" });
+	});
+});
 
 /* ============================
 	 Start Server
