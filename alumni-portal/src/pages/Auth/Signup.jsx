@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -16,16 +12,12 @@ import {
   MenuItem,
 } from "@mui/material";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import ApartmentIcon from "@mui/icons-material/Apartment";
-import SchoolIcon from "@mui/icons-material/School";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-
-
-
+import schoolLogo from "../../assets/school-logo.png";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -43,7 +35,6 @@ const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  // disable browser autofill on mount
   useEffect(() => {
     setTimeout(() => {
       const inputs = document.querySelectorAll('input');
@@ -54,29 +45,17 @@ const Signup = () => {
     }, 50);
   }, []);
 
-
-
-
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
-
-
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-
-
-
   const toggleConfirmPasswordVisibility = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
-
-
-
 
   const validate = () => {
     let temp = {};
@@ -84,35 +63,28 @@ const Signup = () => {
     const nameRegex = /^[a-zA-Z\s]+$/;
     const phoneRegex = /^[0-9]{10}$/;
 
-
-
-
     if (!form.fullName) {
       temp.fullName = "Full name is required";
     } else if (!nameRegex.test(form.fullName)) {
       temp.fullName = "Name must contain only alphabets";
     }
-   
-    if (!form.department) temp.department = "Department is required";
-   
+
+    if (!form.department) temp.department = "Group is required";
+
     if (!form.year) temp.year = "Year of passout is required";
-   
+
     if (!form.phone) {
       temp.phone = "Phone number is required";
     } else if (!phoneRegex.test(form.phone)) {
       temp.phone = "Phone number must be exactly 10 digits";
     }
-   
+
     if (!form.email) {
       temp.email = "Email is required";
     } else if (!emailRegex.test(form.email)) {
       temp.email = "Enter a valid email";
     }
 
-
-
-
-    // Password validation
     if (!form.password) {
       temp.password = "Password is required";
     } else if (form.password.length < 8) {
@@ -127,84 +99,52 @@ const Signup = () => {
       temp.password = "Password must have a special character (!@#$%^&*)";
     }
 
-
-
-
-    // Confirm password validation
     if (!form.confirmPassword) {
       temp.confirmPassword = "Please confirm your password";
     } else if (form.password !== form.confirmPassword) {
       temp.confirmPassword = "Passwords do not match";
     }
 
-
-
-
     setErrors(temp);
     return Object.keys(temp).length === 0;
   };
 
+  const handleSignup = async () => {
+    if (!validate()) return;
 
+    try {
+      setLoading(true);
 
+      const response = await fetch("http://localhost:5000/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
 
-const handleSignup = async () => {
-  if (!validate()) return;
+      const data = await response.json();
 
-
-
-
-  try {
-    setLoading(true);
-
-
-
-
-    const response = await fetch("http://localhost:5000/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form),
-    });
-
-
-
-
-    const data = await response.json();
-
-
-
-
-    if (response.ok) {
-      alert("Registration Successful...Wait For Admin's approval✅");
-      console.log("Server Response:", data);
-      navigate("/"); // redirect to login
-    } else {
-      alert(data.message || "Registration failed");
+      if (response.ok) {
+        alert("Registration Successful...Wait For Admin's approval✅");
+        console.log("Server Response:", data);
+        navigate("/");
+      } else {
+        alert(data.message || "Registration failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Server error. Please try again.");
+    } finally {
+      setLoading(false);
     }
-
-
-
-
-  } catch (error) {
-    console.error("Error:", error);
-    alert("Server error. Please try again.");
-  } finally {
-    setLoading(false);
-  }
-};
-
-
-
+  };
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       handleSignup();
     }
   };
-
-
-
 
   return (
     <Box
@@ -278,11 +218,12 @@ const handleSignup = async () => {
             },
           }}
         >
+          {/* SCHOOL LOGO */}
           <Box
             sx={{
-              width: "80px",
-              height: "80px",
-              background: "rgba(255, 255, 255, 0.2)",
+              width: "100px",
+              height: "100px",
+              background: "rgba(255, 255, 255, 0.95)",
               borderRadius: "50%",
               display: "flex",
               alignItems: "center",
@@ -291,39 +232,57 @@ const handleSignup = async () => {
               backdropFilter: "blur(10px)",
               position: "relative",
               zIndex: 1,
+              padding: "8px",
+              boxShadow: "0 4px 16px rgba(0,0,0,0.2)",
             }}
           >
-            <Typography
-              sx={{
-                fontSize: "40px",
-                fontWeight: "700",
-                color: "white",
-              }}
-            >
-              🎓
-            </Typography>
+            <img
+              src={schoolLogo}
+              alt="School Logo"
+              style={{ width: "80px", height: "80px", objectFit: "contain", borderRadius: "50%" }}
+            />
           </Box>
 
-
-
-
           <Typography
-            variant="h4"
+            variant="h6"
             fontWeight="700"
             color="white"
-            sx={{ mb: 2, fontSize: { xs: "28px", sm: "32px" }, position: "relative", zIndex: 1 }}
+            sx={{ mb: 1, fontSize: { xs: "16px", sm: "18px" }, position: "relative", zIndex: 1, lineHeight: 1.4 }}
+          >
+            P.S.Chidambara Nadar
+          </Typography>
+
+          <Typography
+            variant="h6"
+            fontWeight="700"
+            color="white"
+            sx={{ mb: 1, fontSize: { xs: "16px", sm: "18px" }, position: "relative", zIndex: 1, lineHeight: 1.4 }}
+          >
+            Senior English School
+          </Typography>
+
+          <Typography
+            variant="body2"
+            color="rgba(255, 255, 255, 0.85)"
+            sx={{ mb: 2, fontSize: "13px", position: "relative", zIndex: 1 }}
+          >
+            Virudhunagar
+          </Typography>
+
+          <Typography
+            variant="h5"
+            fontWeight="700"
+            color="white"
+            sx={{ mb: 2, fontSize: { xs: "22px", sm: "26px" }, position: "relative", zIndex: 1, letterSpacing: 1 }}
           >
             ALUMNI
           </Typography>
-
-
-
 
           <Typography
             variant="body1"
             color="rgba(255, 255, 255, 0.9)"
             sx={{
-              fontSize: "14px",
+              fontSize: "13px",
               lineHeight: "1.6",
               fontWeight: "300",
               position: "relative",
@@ -333,9 +292,6 @@ const handleSignup = async () => {
             Join our community and connect with fellow alumni. Build lasting relationships and expand your professional network.
           </Typography>
         </Box>
-
-
-
 
         {/* RIGHT PANEL - FORM */}
         <Box
@@ -360,9 +316,6 @@ const handleSignup = async () => {
             Create Account
           </Typography>
 
-
-
-
           <Typography
             variant="body2"
             sx={{
@@ -373,9 +326,6 @@ const handleSignup = async () => {
           >
             Join our alumni network and stay connected
           </Typography>
-
-
-
 
           {/* FORM FIELDS GRID */}
           <Box
@@ -411,26 +361,16 @@ const handleSignup = async () => {
                   backgroundColor: "#f7fafc",
                   borderRadius: "8px",
                   transition: "all 0.3s ease",
-                  "& fieldset": {
-                    borderColor: "#e2e8f0",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "#cbd5e0",
-                  },
+                  "& fieldset": { borderColor: "#e2e8f0" },
+                  "&:hover fieldset": { borderColor: "#cbd5e0" },
                   "&.Mui-focused fieldset": {
                     borderColor: "#6879e3",
                     boxShadow: "0 0 0 3px rgba(104, 121, 227, 0.1)",
                   },
                 },
-                "& .MuiOutlinedInput-input": {
-                  color: "#1a202c",
-                  fontSize: "14px",
-                },
+                "& .MuiOutlinedInput-input": { color: "#1a202c", fontSize: "14px" },
               }}
             />
-
-
-
 
             {/* PHONE NUMBER */}
             <TextField
@@ -458,28 +398,18 @@ const handleSignup = async () => {
                   backgroundColor: "#f7fafc",
                   borderRadius: "8px",
                   transition: "all 0.3s ease",
-                  "& fieldset": {
-                    borderColor: "#e2e8f0",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "#cbd5e0",
-                  },
+                  "& fieldset": { borderColor: "#e2e8f0" },
+                  "&:hover fieldset": { borderColor: "#cbd5e0" },
                   "&.Mui-focused fieldset": {
                     borderColor: "#6879e3",
                     boxShadow: "0 0 0 3px rgba(104, 121, 227, 0.1)",
                   },
                 },
-                "& .MuiOutlinedInput-input": {
-                  color: "#1a202c",
-                  fontSize: "14px",
-                },
+                "& .MuiOutlinedInput-input": { color: "#1a202c", fontSize: "14px" },
               }}
             />
 
-
-
-
-            {/* DEPARTMENT - DROPDOWN */}
+            {/* GROUP - DROPDOWN */}
             <Select
               name="department"
               value={form.department}
@@ -494,12 +424,8 @@ const handleSignup = async () => {
                 fontSize: "14px",
                 color: "#1a202c",
                 height: "56px",
-                "& .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "#e2e8f0",
-                },
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "#cbd5e0",
-                },
+                "& .MuiOutlinedInput-notchedOutline": { borderColor: "#e2e8f0" },
+                "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "#cbd5e0" },
                 "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
                   borderColor: "#6879e3",
                   boxShadow: "0 0 0 3px rgba(104, 121, 227, 0.1)",
@@ -508,24 +434,21 @@ const handleSignup = async () => {
             >
               <MenuItem value="" disabled>
                 <Typography sx={{ color: "#a0aec0", fontSize: "14px", fontWeight: "600" }}>
-                  Department
+                  Select Group
                 </Typography>
               </MenuItem>
-              <MenuItem value="Computer Science">Computer Science</MenuItem>
-              <MenuItem value="Mechanical Engineering">Mechanical Engineering</MenuItem>
-              <MenuItem value="Electronics & Communication">Electronics & Communication</MenuItem>
-              <MenuItem value="Civil Engineering">Civil Engineering</MenuItem>
-              <MenuItem value="Electrical Engineering">Electrical Engineering</MenuItem>
-              <MenuItem value="Information Technology">Information Technology</MenuItem>
+              <MenuItem value="Computer Science">Computer Science (CS)</MenuItem>
+              <MenuItem value="Bio Maths">Bio Maths</MenuItem>
+              <MenuItem value="Bio Botany">Bio Botany</MenuItem>
+              <MenuItem value="Commerce">Commerce</MenuItem>
+              <MenuItem value="Arts">Arts</MenuItem>
+              <MenuItem value="Vocational">Vocational</MenuItem>
             </Select>
             {errors.department && (
               <Typography sx={{ color: "#e53e3e", fontSize: "12px", mt: 0.5 }}>
                 {errors.department}
               </Typography>
             )}
-
-
-
 
             {/* YEAR - DROPDOWN */}
             <Select
@@ -542,12 +465,8 @@ const handleSignup = async () => {
                 fontSize: "14px",
                 color: "#1a202c",
                 height: "56px",
-                "& .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "#e2e8f0",
-                },
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "#cbd5e0",
-                },
+                "& .MuiOutlinedInput-notchedOutline": { borderColor: "#e2e8f0" },
+                "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "#cbd5e0" },
                 "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
                   borderColor: "#6879e3",
                   boxShadow: "0 0 0 3px rgba(104, 121, 227, 0.1)",
@@ -559,36 +478,15 @@ const handleSignup = async () => {
                   Year of Passout
                 </Typography>
               </MenuItem>
-              <MenuItem value="2024">2024</MenuItem>
-              <MenuItem value="2023">2023</MenuItem>
-              <MenuItem value="2022">2022</MenuItem>
-              <MenuItem value="2021">2021</MenuItem>
-              <MenuItem value="2020">2020</MenuItem>
-              <MenuItem value="2019">2019</MenuItem>
-              <MenuItem value="2018">2018</MenuItem>
-              <MenuItem value="2017">2017</MenuItem>
-              <MenuItem value="2016">2016</MenuItem>
-              <MenuItem value="2015">2015</MenuItem>
-              <MenuItem value="2014">2014</MenuItem>
-              <MenuItem value="2013">2013</MenuItem>
-              <MenuItem value="2012">2012</MenuItem>
-              <MenuItem value="2011">2011</MenuItem>
-              <MenuItem value="2010">2010</MenuItem>
-              <MenuItem value="2009">2009</MenuItem>
-              <MenuItem value="2008">2008</MenuItem>
-              <MenuItem value="2007">2007</MenuItem>
-              <MenuItem value="2006">2006</MenuItem>
-              <MenuItem value="2005">2005</MenuItem>
-              <MenuItem value="2004">2004</MenuItem>
+              {Array.from({ length: 21 }, (_, i) => 2024 - i).map((yr) => (
+                <MenuItem key={yr} value={String(yr)}>{yr}</MenuItem>
+              ))}
             </Select>
             {errors.year && (
               <Typography sx={{ color: "#e53e3e", fontSize: "12px", mt: 0.5 }}>
                 {errors.year}
               </Typography>
             )}
-
-
-
 
             {/* EMAIL - FULL WIDTH */}
             <TextField
@@ -619,26 +517,16 @@ const handleSignup = async () => {
                   backgroundColor: "#f7fafc",
                   borderRadius: "8px",
                   transition: "all 0.3s ease",
-                  "& fieldset": {
-                    borderColor: "#e2e8f0",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "#cbd5e0",
-                  },
+                  "& fieldset": { borderColor: "#e2e8f0" },
+                  "&:hover fieldset": { borderColor: "#cbd5e0" },
                   "&.Mui-focused fieldset": {
                     borderColor: "#6879e3",
                     boxShadow: "0 0 0 3px rgba(104, 121, 227, 0.1)",
                   },
                 },
-                "& .MuiOutlinedInput-input": {
-                  color: "#1a202c",
-                  fontSize: "14px",
-                },
+                "& .MuiOutlinedInput-input": { color: "#1a202c", fontSize: "14px" },
               }}
             />
-
-
-
 
             {/* CREATE PASSWORD - FULL WIDTH */}
             <TextField
@@ -684,26 +572,16 @@ const handleSignup = async () => {
                   backgroundColor: "#f7fafc",
                   borderRadius: "8px",
                   transition: "all 0.3s ease",
-                  "& fieldset": {
-                    borderColor: "#e2e8f0",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "#cbd5e0",
-                  },
+                  "& fieldset": { borderColor: "#e2e8f0" },
+                  "&:hover fieldset": { borderColor: "#cbd5e0" },
                   "&.Mui-focused fieldset": {
                     borderColor: "#6879e3",
                     boxShadow: "0 0 0 3px rgba(104, 121, 227, 0.1)",
                   },
                 },
-                "& .MuiOutlinedInput-input": {
-                  color: "#1a202c",
-                  fontSize: "14px",
-                },
+                "& .MuiOutlinedInput-input": { color: "#1a202c", fontSize: "14px" },
               }}
             />
-
-
-
 
             {/* CONFIRM PASSWORD - FULL WIDTH */}
             <TextField
@@ -749,27 +627,17 @@ const handleSignup = async () => {
                   backgroundColor: "#f7fafc",
                   borderRadius: "8px",
                   transition: "all 0.3s ease",
-                  "& fieldset": {
-                    borderColor: "#e2e8f0",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "#cbd5e0",
-                  },
+                  "& fieldset": { borderColor: "#e2e8f0" },
+                  "&:hover fieldset": { borderColor: "#cbd5e0" },
                   "&.Mui-focused fieldset": {
                     borderColor: "#6879e3",
                     boxShadow: "0 0 0 3px rgba(104, 121, 227, 0.1)",
                   },
                 },
-                "& .MuiOutlinedInput-input": {
-                  color: "#1a202c",
-                  fontSize: "14px",
-                },
+                "& .MuiOutlinedInput-input": { color: "#1a202c", fontSize: "14px" },
               }}
             />
           </Box>
-
-
-
 
           {/* SIGNUP BUTTON */}
           <Button
@@ -806,9 +674,6 @@ const handleSignup = async () => {
             )}
           </Button>
 
-
-
-
           {/* DIVIDER */}
           <Box sx={{ display: "flex", alignItems: "center", my: 2 }}>
             <Box sx={{ flex: 1, height: "1px", background: "#e2e8f0" }} />
@@ -817,9 +682,6 @@ const handleSignup = async () => {
             </Typography>
             <Box sx={{ flex: 1, height: "1px", background: "#e2e8f0" }} />
           </Box>
-
-
-
 
           {/* LOGIN LINK */}
           <Button
@@ -849,17 +711,4 @@ const handleSignup = async () => {
   );
 };
 
-
-
-
 export default Signup;
-
-
-
-
-
-
-
-
-
-

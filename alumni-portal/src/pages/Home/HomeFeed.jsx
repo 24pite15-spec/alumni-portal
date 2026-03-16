@@ -29,6 +29,13 @@ const getImageUrl = (post_image_path, image_url) => {
   return "";
 };
 
+// ── Build full URL for a profile photo path ───────────────────────────────
+const getProfilePhotoUrl = (photoPath) => {
+  if (!photoPath) return "";
+  if (photoPath.startsWith("http") || photoPath.startsWith("/")) return photoPath;
+  return `${API_BASE_URL}/${photoPath}`;
+};
+
 // ── Date Range Calendar component ───────────────────────────────────────────
 const DAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 const MONTHS = [
@@ -468,6 +475,7 @@ const HomeFeed = () => {
 
   const fileInputRef = useRef(null);
   const [user, setUser] = useState(null);
+  const isAdmin = user?.role === "admin";
   const [allPosts, setAllPosts] = useState(initialPosts);
   const [tick, setTick] = useState(0);
 
@@ -610,6 +618,8 @@ const HomeFeed = () => {
               : "",
             text: p.post_description || "",
             image: getImageUrl(p.post_image_path, p.image_url),
+            // ✅ FIX 1: carry profile_photo from the API response
+            profilePhoto: p.profile_photo || "",
           }));
 
           const filtered = converted.filter((post) => {
@@ -629,8 +639,9 @@ const HomeFeed = () => {
 
   const handlePost = async () => {
     try {
-      const user = JSON.parse(localStorage.getItem("user"));
-      if (!user?.userId) { alert("User not logged in"); return; }
+      const currentUser = JSON.parse(localStorage.getItem("user"));
+      if (!currentUser?.userId) { alert("User not logged in"); return; }
+      if (currentUser.role === "admin") { alert("Admins are not allowed to create posts."); return; }
       let postImagePath = null, imageUrl = null;
       if (selectedImageFile) {
         const form = new FormData();
@@ -730,7 +741,7 @@ const HomeFeed = () => {
             variant="h3" fontWeight={800} mb={1.5}
             sx={{ color: "#ffffff", letterSpacing: "-0.5px", fontSize: { xs: "28px", md: "36px" } }}
           >
-            Home Feed
+            Feeds
           </Typography>
           <Typography
             variant="body1"
@@ -849,95 +860,101 @@ const HomeFeed = () => {
         </Box>
 
         {/* CREATE POST */}
-        <Paper
-          sx={{
-            p: { xs: 2.5, md: 3.5 }, borderRadius: 3, mb: 5,
-            boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
-            backgroundColor: "#ffffff", border: "1px solid #e8eaf6", color: "black",
-          }}
-        >
-          <Typography fontWeight={700} mb={3} sx={{ fontSize: "16px", color: "#1a1a1a" }}>
-            ✨ Create Post
-          </Typography>
-          <Box display="flex" gap={3} alignItems="flex-start">
-            <Avatar sx={{ width: 52, height: 52, backgroundColor: "#6879e3", color: "white", fontWeight: 700, fontSize: "18px" }}>
-              AU
-            </Avatar>
-            <Box sx={{ flex: 1 }}>
-              <TextField
-                fullWidth
-                placeholder="What's on your mind?"
-                value={postText}
-                onChange={(e) => setPostText(e.target.value)}
-                multiline
-                minRows={2}
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    backgroundColor: "rgba(104,121,227,0.02)", borderRadius: 2.5,
-                    border: "1.5px solid rgba(104,121,227,0.15)", transition: "all 0.2s ease", fontSize: "15px",
-                    "&:hover": { border: "1.5px solid rgba(104,121,227,0.25)" },
-                    "&.Mui-focused": {
-                      backgroundColor: "rgba(104,121,227,0.05)",
-                      border: "1.5px solid #6879e3",
-                      boxShadow: "0 0 0 3px rgba(104,121,227,0.1)",
-                    },
-                  },
-                  "& .MuiOutlinedInput-input": {
-                    color: "#1a1a1a", fontWeight: 500,
-                    "&::placeholder": { color: "#999", opacity: 1 },
-                  },
-                }}
-              />
-              {selectedImage && (
-                <Box
-                  component="img" src={selectedImage} alt="preview"
-                  sx={{ mt: 2.5, width: "100%", maxHeight: 380, objectFit: "cover", borderRadius: 3, boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}
-                />
-              )}
-            </Box>
-          </Box>
-          <Box
-            mt={3.5} display="flex" alignItems="center" justifyContent="space-between"
-            flexDirection={{ xs: "column", sm: "row" }} gap={2}
+        {!isAdmin && (
+          <Paper
+            sx={{
+              p: { xs: 2.5, md: 3.5 }, borderRadius: 3, mb: 5,
+              boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
+              backgroundColor: "#ffffff", border: "1px solid #e8eaf6", color: "black",
+            }}
           >
-            <Box display="flex" gap={2} flexWrap="wrap" sx={{ flex: 1 }}>
+            <Typography fontWeight={700} mb={3} sx={{ fontSize: "16px", color: "#1a1a1a" }}>
+              ✨ Create Post
+            </Typography>
+            <Box display="flex" gap={3} alignItems="flex-start">
+              {/* ✅ FIX 2: Create Post avatar — show logged-in user's profile photo */}
+              <Avatar
+                src={getProfilePhotoUrl(user?.profilePhoto)}
+                sx={{ width: 52, height: 52, backgroundColor: "#6879e3", color: "white", fontWeight: 700, fontSize: "18px" }}
+              >
+                {(!user?.profilePhoto) && (user?.fullName?.charAt(0)?.toUpperCase() || "U")}
+              </Avatar>
+              <Box sx={{ flex: 1 }}>
+                <TextField
+                  fullWidth
+                  placeholder="What's on your mind?"
+                  value={postText}
+                  onChange={(e) => setPostText(e.target.value)}
+                  multiline
+                  minRows={2}
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      backgroundColor: "rgba(104,121,227,0.02)", borderRadius: 2.5,
+                      border: "1.5px solid rgba(104,121,227,0.15)", transition: "all 0.2s ease", fontSize: "15px",
+                      "&:hover": { border: "1.5px solid rgba(104,121,227,0.25)" },
+                      "&.Mui-focused": {
+                        backgroundColor: "rgba(104,121,227,0.05)",
+                        border: "1.5px solid #6879e3",
+                        boxShadow: "0 0 0 3px rgba(104,121,227,0.1)",
+                      },
+                    },
+                    "& .MuiOutlinedInput-input": {
+                      color: "#1a1a1a", fontWeight: 500,
+                      "&::placeholder": { color: "#999", opacity: 1 },
+                    },
+                  }}
+                />
+                {selectedImage && (
+                  <Box
+                    component="img" src={selectedImage} alt="preview"
+                    sx={{ mt: 2.5, width: "100%", maxHeight: 380, objectFit: "cover", borderRadius: 3, boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}
+                  />
+                )}
+              </Box>
+            </Box>
+            <Box
+              mt={3.5} display="flex" alignItems="center" justifyContent="space-between"
+              flexDirection={{ xs: "column", sm: "row" }} gap={2}
+            >
+              <Box display="flex" gap={2} flexWrap="wrap" sx={{ flex: 1 }}>
+                <Button
+                  variant="outlined" startIcon={<PhotoCameraOutlinedIcon />}
+                  onClick={() => setOpenPhotoDialog(true)}
+                  sx={{
+                    borderRadius: 2.5, borderColor: "rgba(104,121,227,0.4)", color: "#6879e3",
+                    fontWeight: 600, fontSize: "14px",
+                    "&:hover": { backgroundColor: "rgba(104,121,227,0.08)", borderColor: "#6879e3" },
+                  }}
+                >
+                  Add Photo
+                </Button>
+                <Button
+                  variant="outlined" startIcon={<LinkOutlinedIcon />}
+                  onClick={() => setOpenLinkDialog(true)}
+                  sx={{
+                    borderRadius: 2.5, borderColor: "rgba(104,121,227,0.4)", color: "#6879e3",
+                    fontWeight: 600, fontSize: "14px",
+                    "&:hover": { backgroundColor: "rgba(104,121,227,0.08)", borderColor: "#6879e3" },
+                  }}
+                >
+                  Add Link
+                </Button>
+              </Box>
               <Button
-                variant="outlined" startIcon={<PhotoCameraOutlinedIcon />}
-                onClick={() => setOpenPhotoDialog(true)}
+                variant="contained" onClick={handlePost}
+                disabled={!postText && !selectedImage}
                 sx={{
-                  borderRadius: 2.5, borderColor: "rgba(104,121,227,0.4)", color: "#6879e3",
-                  fontWeight: 600, fontSize: "14px",
-                  "&:hover": { backgroundColor: "rgba(104,121,227,0.08)", borderColor: "#6879e3" },
+                  borderRadius: 2.5, px: 4, py: 1.2, backgroundColor: "#6879e3", color: "white",
+                  fontWeight: 700, fontSize: "15px", boxShadow: "0 8px 24px rgba(104,121,227,0.35)",
+                  "&:hover": { backgroundColor: "#5a6fd6", transform: "translateY(-2px)" },
+                  "&:disabled": { backgroundColor: "#c0c8e0", boxShadow: "none" },
                 }}
               >
-                Add Photo
-              </Button>
-              <Button
-                variant="outlined" startIcon={<LinkOutlinedIcon />}
-                onClick={() => setOpenLinkDialog(true)}
-                sx={{
-                  borderRadius: 2.5, borderColor: "rgba(104,121,227,0.4)", color: "#6879e3",
-                  fontWeight: 600, fontSize: "14px",
-                  "&:hover": { backgroundColor: "rgba(104,121,227,0.08)", borderColor: "#6879e3" },
-                }}
-              >
-                Add Link
+                Post
               </Button>
             </Box>
-            <Button
-              variant="contained" onClick={handlePost}
-              disabled={!postText && !selectedImage}
-              sx={{
-                borderRadius: 2.5, px: 4, py: 1.2, backgroundColor: "#6879e3", color: "white",
-                fontWeight: 700, fontSize: "15px", boxShadow: "0 8px 24px rgba(104,121,227,0.35)",
-                "&:hover": { backgroundColor: "#5a6fd6", transform: "translateY(-2px)" },
-                "&:disabled": { backgroundColor: "#c0c8e0", boxShadow: "none" },
-              }}
-            >
-              Post
-            </Button>
-          </Box>
-        </Paper>
+          </Paper>
+        )}
 
         {/* POSTS HEADER */}
         <Box display="flex" alignItems="center" justifyContent="space-between" mb={3.5} flexWrap="wrap" gap={1}>
@@ -982,8 +999,12 @@ const HomeFeed = () => {
               >
                 <Box display="flex" justifyContent="space-between" alignItems="flex-start" mb={2.5}>
                   <Box display="flex" gap={2.5}>
-                    <Avatar sx={{ width: 48, height: 48, backgroundColor: "#6879e3", color: "white", fontWeight: 700, fontSize: "16px" }}>
-                      {post.name.charAt(0).toUpperCase()}
+                    {/* ✅ FIX 3: Post card avatar — show poster's profile photo */}
+                    <Avatar
+                      src={getProfilePhotoUrl(post.profilePhoto)}
+                      sx={{ width: 48, height: 48, backgroundColor: "#6879e3", color: "white", fontWeight: 700, fontSize: "16px" }}
+                    >
+                      {(!post.profilePhoto) && post.name?.charAt(0)?.toUpperCase()}
                     </Avatar>
                     <Box>
                       <Typography fontWeight={700} sx={{ fontSize: "15px", color: "#1a1a1a" }}>

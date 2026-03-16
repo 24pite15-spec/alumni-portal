@@ -90,6 +90,7 @@ const AdminDashboard = () => {
   };
 
   const openConfirmDialog = (email, actionType, actionValue) => {
+    console.log("Opening confirm dialog with:", { email, actionType, actionValue });
     setConfirmDialog({ open: true, email, actionType, actionValue });
   };
 
@@ -100,20 +101,20 @@ const AdminDashboard = () => {
   };
 
   useEffect(() => {
-    if (!confirmDialog.open) {
-      document.querySelectorAll(".MuiBackdrop-root").forEach((b) => {
-        if (!document.body.contains(b.closest('[role="presentation"]'))) {
-          b.remove();
-        }
-      });
-      const root = document.getElementById("root");
-      if (root && root.getAttribute("aria-hidden") === "true") {
-        root.removeAttribute("aria-hidden");
-      }
-      if (document.activeElement && typeof document.activeElement.blur === "function") {
-        document.activeElement.blur();
-      }
-    }
+    // if (!confirmDialog.open) {
+    //   document.querySelectorAll(".MuiBackdrop-root").forEach((b) => {
+    //     if (!document.body.contains(b.closest('[role="presentation"]'))) {
+    //       b.remove();
+    //     }
+    //   });
+    //   const root = document.getElementById("root");
+    //   if (root && root.getAttribute("aria-hidden") === "true") {
+    //     root.removeAttribute("aria-hidden");
+    //   }
+    //   if (document.activeElement && typeof document.activeElement.blur === "function") {
+    //     document.activeElement.blur();
+    //   }
+    // }
   }, [confirmDialog.open]);
 
   const confirmAction = async () => {
@@ -571,7 +572,7 @@ const AdminDashboard = () => {
         onClose={closeConfirmDialog}
         maxWidth="sm"
         fullWidth
-        TransitionComponent={Transition}
+        // TransitionComponent={Transition}
         disableEscapeKeyDown={false}
         /* removed unsupported `onBackdropClick` prop; MUI will call
            `onClose` with a reason of "backdropClick" when the user clicks

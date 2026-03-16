@@ -7,7 +7,7 @@ import ReportGmailerrorredIcon from "@mui/icons-material/ReportGmailerrorred";
 
 const getPageTitle = (path) => {
   switch (path) {
-    case "/home":           return "Home";
+    case "/home":           return "Feeds";
     case "/alumni":         return "Alumni Profile";
     case "/jobs":           return "Jobs";
     case "/events":         return "Events";
